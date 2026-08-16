@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d4af37;
+  }
+}
+
+@layer components {
+  .liquid-glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .dark .liquid-glass {
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .tech-grid {
+    background-size: 40px 40px;
+    background-image: linear-gradient(
+        to right,
+        rgba(128, 128, 128, 0.05) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(128, 128, 128, 0.05) 1px, transparent 1px);
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+}
+
+@layer utilities {
+  .click-particle {
+    position: fixed;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    animation: ripple 0.8s ease-out forwards;
+    border: 1px solid #d4af37;
+    box-shadow: 0 0 10px #d4af37;
+  }
+
+  @keyframes ripple {
+    0% {
+      opacity: 1;
+      width: 0px;
+      height: 0px;
+      border-width: 4px;
+    }
+    100% {
+      opacity: 0;
+      width: 50px;
+      height: 50px;
+      border-width: 0px;
+    }
+  }
+}
