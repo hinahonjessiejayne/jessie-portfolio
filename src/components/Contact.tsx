@@ -94,7 +94,7 @@ const Contact = () => (
               rel="noopener noreferrer"
               className={`${valueClass} break-all`}
             >
-              hinahonjessiejayne.wixsite.com/jessie
+              ai.jessiecalm.com
             </a>
           </div>
         </div>

@@ -39,7 +39,7 @@ export const CONTACT_INFO: ContactInfo = {
   phone: '+639171205135',
   email: 'hinahonjessiejayne@gmail.com',
   address: 'Paranaque City, Philippines',
-  website: 'https://hinahonjessiejayne.wixsite.com/jessie',
+  website: 'https://ai.jessiecalm.com/',
 };
 
 export const NAV_ITEMS: NavItem[] = [
