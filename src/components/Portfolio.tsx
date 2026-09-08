@@ -5,6 +5,41 @@ import WorkFan from './WorkFan';
 import { PROJECTS, PROJECT_CATEGORIES } from '../constants';
 import type { Project, ProjectCategory } from '../types';
 
+/**
+ * The bee that lands on whichever category is open. It shares a layoutId
+ * across the tabs, so switching category sends it flying to the new pill on
+ * the same spring the pill itself rides; wings beat and it bobs in place.
+ */
+const Bee = () => (
+  <motion.span
+    layoutId="bee"
+    aria-hidden="true"
+    className="absolute -right-2 -top-5 z-20 block h-7 w-9 drop-shadow-[0_2px_3px_rgba(0,0,0,0.45)]"
+    transition={{ type: 'spring', bounce: 0.35, duration: 0.8 }}
+  >
+    <svg viewBox="0 0 32 24" className="h-full w-full animate-bob motion-reduce:animate-none">
+      <defs>
+        <clipPath id="bee-body">
+          <ellipse cx="16" cy="15" rx="10" ry="6.5" />
+        </clipPath>
+      </defs>
+      <g className="origin-bottom animate-flutter [transform-box:fill-box] motion-reduce:animate-none">
+        <ellipse cx="13" cy="7" rx="6" ry="3.6" fill="#FFFFFF" fillOpacity="0.55" stroke="#111111" strokeOpacity="0.45" strokeWidth="0.8" transform="rotate(-28 13 7)" />
+        <ellipse cx="19.5" cy="6.5" rx="5.5" ry="3.3" fill="#FFFFFF" fillOpacity="0.55" stroke="#111111" strokeOpacity="0.45" strokeWidth="0.8" transform="rotate(-12 19.5 6.5)" />
+      </g>
+      <path d="M6.5 15 L2.5 15.9 L6.5 16.8 Z" fill="#111111" />
+      <ellipse cx="16" cy="15" rx="10" ry="6.5" fill="#D4AF37" stroke="#111111" strokeWidth="1.2" />
+      <g clipPath="url(#bee-body)" fill="#111111">
+        <rect x="10.5" y="7" width="2.8" height="16" />
+        <rect x="16.2" y="7" width="2.8" height="16" />
+      </g>
+      <circle cx="26.5" cy="14.5" r="3.6" fill="#111111" />
+      <circle cx="27.7" cy="13.5" r="0.8" fill="#FFFFFF" />
+      <path d="M27 11 L29 8.2 M28.8 11.6 L31 9.6" stroke="#111111" strokeWidth="0.9" strokeLinecap="round" />
+    </svg>
+  </motion.span>
+);
+
 const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('N8N');
@@ -52,6 +87,7 @@ const Portfolio = () => {
                     transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                   />
                 )}
+                {activeCategory === category && <Bee />}
                 <span className="relative z-10">{category}</span>
               </button>
             ))}

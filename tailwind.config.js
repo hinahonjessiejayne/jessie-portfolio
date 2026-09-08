@@ -50,6 +50,8 @@ export default {
         drip: 'drip 3.6s ease-in-out infinite',
         droplet: 'droplet 3.6s ease-in infinite',
         'honey-fill': 'honey-fill 4s ease-in-out infinite',
+        flutter: 'flutter 0.16s ease-in-out infinite',
+        bob: 'bob 1.8s ease-in-out infinite',
       },
       keyframes: {
         float: {
@@ -79,6 +81,16 @@ export default {
         'honey-fill': {
           '0%, 100%': { opacity: '0.18' },
           '50%': { opacity: '0.6' },
+        },
+        /* Bee wings, beating from the shoulder. */
+        flutter: {
+          '0%, 100%': { transform: 'scaleY(1)' },
+          '50%': { transform: 'scaleY(0.45)' },
+        },
+        /* The bee hovering in place, a couple of pixels either way. */
+        bob: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-2px)' },
         },
       },
     },
