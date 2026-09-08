@@ -244,6 +244,14 @@ export const PROJECTS: Project[] = [
     imageUrl: '/work/nila-residences.png',
   },
   {
+    id: 'ghl-8',
+    title: 'Lead Nurture Workflow',
+    category: 'GHL',
+    description:
+      'Three-touch nurture for unbooked leads in GoHighLevel: tag trigger, do-not-contact gate, 48h / 3d / 7d waits, and a two-condition still-unbooked check before every email that drops anyone who books a viewing. Built node by node in the workflow builder. Concept demo for a fictional realty brand, not a client.',
+    imageUrl: '/work/bnj-nurture-workflow.png',
+  },
+  {
     id: 'pos-1',
     title: 'QA: Point-of-Sale Admin System',
     category: 'Apps & AI',
