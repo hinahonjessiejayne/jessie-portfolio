@@ -8,7 +8,6 @@ import HexGrid from './components/HexGrid';
 import Portfolio from './components/Portfolio';
 import Scheduler from './components/Scheduler';
 import Services from './components/Services';
-import Testimonials from './components/Testimonials';
 
 const RIPPLE_LIFETIME_MS = 800;
 
@@ -71,7 +70,6 @@ function App() {
           <Services />
           <Experience />
           <Portfolio />
-          <Testimonials />
           <Scheduler />
           <Contact />
         </main>

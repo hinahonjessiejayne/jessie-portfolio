@@ -25,14 +25,6 @@ export interface Project {
   link?: string;
 }
 
-export interface Testimonial {
-  id: string;
-  name: string;
-  role: string;
-  quote: string;
-  avatar: string;
-}
-
 export interface NavItem {
   name: string;
   href: string;

@@ -13,7 +13,6 @@ import type {
   Project,
   ProjectCategory,
   Service,
-  Testimonial,
 } from './types';
 
 export const PROFILE_IMAGE =
@@ -227,36 +226,6 @@ export const PROJECTS: Project[] = [
     description: 'Ice Cream Shop Page',
     imageUrl: 'https://i.imgur.com/Bteqfba.png',
     link: 'https://app.gohighlevel.com/v2/preview/uJnrBWhFYue2S1jXGNLa?notrack=true',
-  },
-];
-
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    id: 't1',
-    name: 'Sarah Jenkins',
-    role: 'Operations Director',
-    quote:
-      "Jessie's ability to manage administrative workflows across multiple sites is unmatched. A true professional who brings order to chaos.",
-    avatar:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop',
-  },
-  {
-    id: 't2',
-    name: 'Mark Thompson',
-    role: 'Senior IT Manager',
-    quote:
-      'As an IT Site Engineer, Jessie was instrumental in our digital transformation. Highly skilled in both technical support and system security.',
-    avatar:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop',
-  },
-  {
-    id: 't3',
-    name: 'Elena Rodriguez',
-    role: 'QA Dept Head',
-    quote:
-      "Jessie's leadership in our QA department drove significant improvements in our audit scores. A dedicated leader who empowers the team.",
-    avatar:
-      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop',
   },
 ];
 

@@ -184,19 +184,8 @@
       </div>
     </section>
 
-    <!-- ================= TESTIMONIALS ================= -->
-    <section id="jh-testimonials" class="jh-sec jh-sec-alt2">
-      <div class="jh-wrap">
-        <div class="jh-sechead jh-reveal">
-          <h2 class="jh-eyebrow">TESTIMONIALS</h2>
-          <h3 class="jh-title">What Colleagues Say</h3>
-        </div>
-        <div class="jh-grid3" id="jh-testimonials-grid"></div>
-      </div>
-    </section>
-
     <!-- ================= CALENDAR ================= -->
-    <section id="jh-calendar" class="jh-sec">
+    <section id="jh-calendar" class="jh-sec jh-sec-alt2">
       <div class="jh-wrap">
         <div class="jh-sechead jh-reveal">
           <h2 class="jh-eyebrow">AVAILABILITY</h2>
@@ -675,18 +664,6 @@
   .jh-workhead{flex-direction:row;align-items:flex-end;justify-content:space-between;}
 }
 
-/* ---------- testimonials ---------- */
-.jh-tcard{position:relative;padding:2rem;background:var(--card2);border:1px solid var(--border);
-  box-shadow:var(--shadow);transition:all .3s ease;}
-.jh-tcard:hover{border-color:rgba(181,149,47,.3);}
-.jh-tquote{width:2rem;height:2rem;color:var(--g500);margin-bottom:1.5rem;opacity:.8;}
-.jh-tcard p{color:var(--muted);line-height:1.7;margin-bottom:2rem;font-style:italic;font-size:.875rem;}
-.jh-tfoot{display:flex;align-items:center;padding-top:1.5rem;border-top:1px solid var(--border);}
-.jh-tavatar{width:2.5rem;height:2.5rem;border-radius:9999px;border:1px solid rgba(181,149,47,.5);
-  margin-right:1rem;filter:grayscale(1);}
-.jh-tname{font-weight:700;color:var(--heading);font-size:.875rem;}
-.jh-trole{font-size:.625rem;color:var(--goldfg);text-transform:uppercase;letter-spacing:.15em;}
-
 /* ---------- calendar ---------- */
 .jh-calframe{width:100%;height:800px;background:var(--card);border:1px solid var(--border);
   border-radius:2px;overflow:hidden;box-shadow:0 20px 25px -5px rgba(0,0,0,.2);}
@@ -856,15 +833,6 @@ a.jh-cvalue:hover{color:var(--goldfg);}
       link:'https://app.gohighlevel.com/v2/preview/uJnrBWhFYue2S1jXGNLa?notrack=true' }
   ];
 
-  var TESTIMONIALS = [
-    { n:'Sarah Jenkins', r:'Operations Director', a:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop',
-      q:"Jessie's ability to manage administrative workflows across multiple sites is unmatched. A true professional who brings order to chaos." },
-    { n:'Mark Thompson', r:'Senior IT Manager', a:'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop',
-      q:'As an IT Site Engineer, Jessie was instrumental in our digital transformation. Highly skilled in both technical support and system security.' },
-    { n:'Elena Rodriguez', r:'QA Dept Head', a:'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop',
-      q:"Jessie's leadership in our QA department drove significant improvements in our audit scores. A dedicated leader who empowers the team." }
-  ];
-
   function esc(s){ return String(s).replace(/[&<>"']/g, function(c){
     return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
   function svg(paths, cls){
@@ -906,19 +874,6 @@ a.jh-cvalue:hover{color:var(--goldfg);}
     '<p class="jh-tl-edu-degree">Bachelor\'s Degree in Computer Science</p></div>';
 
   document.getElementById('jh-timeline').innerHTML = tl;
-
-  /* ---------------- render: testimonials ---------------- */
-  var QUOTE_ICON = '<path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1.5a.5.5 0 0 1 .5.5v.5a2 2 0 0 1-2 2 1 1 0 0 0-1 1v1a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1.5a.5.5 0 0 1 .5.5v.5a2 2 0 0 1-2 2 1 1 0 0 0-1 1v1a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/>';
-  document.getElementById('jh-testimonials-grid').innerHTML = TESTIMONIALS.map(function (t, i) {
-    return '<div class="jh-tcard jh-reveal" style="transition-delay:'+(i*0.2)+'s">'+
-      svg(QUOTE_ICON,'jh-tquote')+
-      '<p>"'+esc(t.q)+'"</p>'+
-      '<div class="jh-tfoot">'+
-        '<img class="jh-tavatar" src="'+esc(t.a)+'" alt="'+esc(t.n)+'" loading="lazy">'+
-        '<div><h5 class="jh-tname">'+esc(t.n)+'</h5>'+
-        '<span class="jh-trole">'+esc(t.r)+'</span></div>'+
-      '</div></div>';
-  }).join('');
 
   /* ---------------- render: projects + tabs ---------------- */
   var grid = document.getElementById('jh-projects');
