@@ -14,7 +14,7 @@ export interface ExperienceItem {
   description: string[];
 }
 
-export type ProjectCategory = 'N8N' | 'Zapier' | 'GHL';
+export type ProjectCategory = 'N8N' | 'Zapier' | 'GHL' | 'Web Apps';
 
 export interface Project {
   id: string;

@@ -118,6 +118,10 @@ const Hero = () => {
               </span>
               <span className="text-gray-400">|</span>
               <span className="font-bold text-brand-600 dark:text-brand-400">
+                N8N
+              </span>
+              <span className="text-gray-400">|</span>
+              <span className="font-bold text-brand-600 dark:text-brand-400">
                 Zapier
               </span>
               <span className="text-gray-400">|</span>

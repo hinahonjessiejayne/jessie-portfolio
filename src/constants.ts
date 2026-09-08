@@ -131,7 +131,7 @@ export const EDUCATION = {
   degree: "Bachelor's Degree in Computer Science",
 };
 
-export const PROJECT_CATEGORIES: ProjectCategory[] = ['N8N', 'Zapier', 'GHL'];
+export const PROJECT_CATEGORIES: ProjectCategory[] = ['N8N', 'Zapier', 'GHL', 'Web Apps'];
 
 export const PROJECTS: Project[] = [
   {
@@ -140,7 +140,7 @@ export const PROJECTS: Project[] = [
     category: 'N8N',
     description:
       'An automated workflow that generates and posts weather updates to your social media platforms (e.g., Facebook Page) at your preferred time and day, utilizing AI to craft engaging content based on real-time data.',
-    imageUrl: 'https://i.imgur.com/wVYYzW8.jpg',
+    imageUrl: '/work/n8n-1.png',
   },
   {
     id: 'n8n-2',
@@ -148,7 +148,7 @@ export const PROJECTS: Project[] = [
     category: 'N8N',
     description:
       'An intelligent automation system where an AI Agent handles booking appointments via call, including the scheduling, updating, and cancellation of appointments.',
-    imageUrl: 'https://i.imgur.com/2Ya0rdm.jpg',
+    imageUrl: '/work/n8n-2.png',
   },
   {
     id: 'zap-1',
@@ -156,7 +156,7 @@ export const PROJECTS: Project[] = [
     category: 'Zapier',
     description:
       'A creative automation system that generates random, unique content pieces and publishes them to LinkedIn, Facebook, or other social media platforms, ensuring a consistent and active online presence.',
-    imageUrl: 'https://i.imgur.com/1ZIxF49.jpg',
+    imageUrl: '/work/zap-1.png',
   },
   {
     id: 'zap-2',
@@ -164,7 +164,7 @@ export const PROJECTS: Project[] = [
     category: 'Zapier',
     description:
       'Setting up 5 key automations to improve workflow efficiency and ensuring consistent communication with possible leads.',
-    imageUrl: 'https://i.imgur.com/0eNqmpH.jpg',
+    imageUrl: '/work/zap-2.png',
   },
   {
     id: 'zap-3',
@@ -172,21 +172,21 @@ export const PROJECTS: Project[] = [
     category: 'Zapier',
     description:
       'Automate lead qualification process that can notify a specific department and send an automated email using LLM.',
-    imageUrl: 'https://i.imgur.com/Gdo5uWb.png',
+    imageUrl: '/work/zap-3.png',
   },
   {
     id: 'zap-4',
     title: 'Email Notification: Daily',
     category: 'Zapier',
     description: 'Send Daily Email',
-    imageUrl: 'https://i.imgur.com/UGk29D4.png',
+    imageUrl: '/work/zap-4.png',
   },
   {
     id: 'zap-5',
     title: 'Email Notification: Weekly',
     category: 'Zapier',
     description: 'Send Weekly Email',
-    imageUrl: 'https://i.imgur.com/FtTRf1H.png',
+    imageUrl: '/work/zap-5.png',
   },
   {
     id: 'ghl-1',
@@ -194,14 +194,14 @@ export const PROJECTS: Project[] = [
     category: 'GHL',
     description:
       'Send Email notification to a specific department for a potential client',
-    imageUrl: 'https://i.imgur.com/DJLEaB6.png',
+    imageUrl: '/work/ghl-1.png',
   },
   {
     id: 'ghl-2',
     title: 'Appointment Booking Reminder',
     category: 'GHL',
     description: 'Send Email reminders day before and 1 hour of the appointment',
-    imageUrl: 'https://i.imgur.com/WPfmkH0.png',
+    imageUrl: '/work/ghl-2.png',
   },
   {
     id: 'ghl-3',
@@ -209,7 +209,7 @@ export const PROJECTS: Project[] = [
     category: 'GHL',
     description:
       'Auto response on Facebook page comment/like the posted comment and send a Direct Message',
-    imageUrl: 'https://i.imgur.com/7GYK1KK.png',
+    imageUrl: '/work/ghl-3.png',
   },
   {
     id: 'ghl-4',
@@ -217,15 +217,39 @@ export const PROJECTS: Project[] = [
     category: 'GHL',
     description:
       'Send Email reminders day before, 1 hour and 5 minutes before the appointment and SMS reminder',
-    imageUrl: 'https://i.imgur.com/vyzerBH.png',
+    imageUrl: '/work/ghl-4.png',
   },
   {
     id: 'ghl-5',
     title: 'Sample Webpage',
     category: 'GHL',
     description: 'Ice Cream Shop Page',
-    imageUrl: 'https://i.imgur.com/Bteqfba.png',
+    imageUrl: '/work/ghl-5.png',
     link: 'https://app.gohighlevel.com/v2/preview/uJnrBWhFYue2S1jXGNLa?notrack=true',
+  },
+  {
+    id: 'ghl-6',
+    title: 'Real Estate Brand Hub',
+    category: 'GHL',
+    description:
+      'Four-page GoHighLevel brand hub for a Metro Manila real-estate brokerage: hub, property pages and lead capture wired straight into the CRM pipeline. Client work; details blurred for confidentiality.',
+    imageUrl: '/work/diana-main-hub.png',
+  },
+  {
+    id: 'ghl-7',
+    title: 'Property Launch Funnel',
+    category: 'GHL',
+    description:
+      'Single-paste GoHighLevel funnel for a residential development launch: hero, unit gallery, enquiry form and booking flow, all scoped under one root. Client work; details blurred for confidentiality.',
+    imageUrl: '/work/nila-residences.png',
+  },
+  {
+    id: 'pos-1',
+    title: 'JirehSync POS: Admin Dashboard',
+    category: 'Web Apps',
+    description:
+      'Point-of-sale admin system with a live sales chart, product and stock management, invoicing and customer records. React 19, Vite 6 and TypeScript front and back, on SQLite.',
+    imageUrl: '/work/pos-dashboard.png',
   },
 ];
 
