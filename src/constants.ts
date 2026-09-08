@@ -14,6 +14,7 @@ import type {
   ProjectCategory,
   Service,
 } from './types';
+import portfolio from './data/projects.json';
 
 export const PROFILE_IMAGE =
   'https://lh3.googleusercontent.com/d/18EafyH0BU_s_OWzlVp303Y3E3lgKScnQ';
@@ -131,192 +132,24 @@ export const EDUCATION = {
   degree: "Bachelor's Degree in Computer Science",
 };
 
-export const PROJECT_CATEGORIES: ProjectCategory[] = ['N8N', 'Zapier', 'GHL', 'Apps & AI'];
+/**
+ * Projects live in `src/data/projects.json` so the same file can be published
+ * as `/portfolio.json` at build time (see `vite.config.ts`) and read by the AI
+ * portfolio at ai.jessiecalm.com. Edit the JSON, not this file, to add work.
+ */
+const CATEGORY_SET: ReadonlySet<string> = new Set<ProjectCategory>(['N8N', 'Zapier', 'GHL', 'Apps & AI']);
 
-export const PROJECTS: Project[] = [
-  {
-    id: 'n8n-1',
-    title: 'AI Social Media Content Creator',
-    category: 'N8N',
-    description:
-      'An automated workflow that generates and posts weather updates to your social media platforms (e.g., Facebook Page) at your preferred time and day, utilizing AI to craft engaging content based on real-time data.',
-    imageUrl: '/work/n8n-1.png',
-  },
-  {
-    id: 'n8n-2',
-    title: 'AI Appointment Setter',
-    category: 'N8N',
-    description:
-      'An intelligent automation system where an AI Agent handles booking appointments via call, including the scheduling, updating, and cancellation of appointments.',
-    imageUrl: '/work/n8n-2.png',
-  },
-  {
-    id: 'zap-1',
-    title: 'AI Content Repurposing',
-    category: 'Zapier',
-    description:
-      'A creative automation system that generates random, unique content pieces and publishes them to LinkedIn, Facebook, or other social media platforms, ensuring a consistent and active online presence.',
-    imageUrl: '/work/zap-1.png',
-  },
-  {
-    id: 'zap-2',
-    title: 'Asana CRM Automation',
-    category: 'Zapier',
-    description:
-      'Setting up 5 key automations to improve workflow efficiency and ensuring consistent communication with possible leads.',
-    imageUrl: '/work/zap-2.png',
-  },
-  {
-    id: 'zap-3',
-    title: 'Webhook: Lead Automation',
-    category: 'Zapier',
-    description:
-      'Automate lead qualification process that can notify a specific department and send an automated email using LLM.',
-    imageUrl: '/work/zap-3.png',
-  },
-  {
-    id: 'zap-4',
-    title: 'Email Notification: Daily',
-    category: 'Zapier',
-    description: 'Send Daily Email',
-    imageUrl: '/work/zap-4.png',
-  },
-  {
-    id: 'zap-5',
-    title: 'Email Notification: Weekly',
-    category: 'Zapier',
-    description: 'Send Weekly Email',
-    imageUrl: '/work/zap-5.png',
-  },
-  {
-    id: 'ghl-1',
-    title: 'Client Notification: Lead Magnet Email',
-    category: 'GHL',
-    description:
-      'Send Email notification to a specific department for a potential client',
-    imageUrl: '/work/ghl-1.png',
-  },
-  {
-    id: 'ghl-2',
-    title: 'Appointment Booking Reminder',
-    category: 'GHL',
-    description: 'Send Email reminders day before and 1 hour of the appointment',
-    imageUrl: '/work/ghl-2.png',
-  },
-  {
-    id: 'ghl-3',
-    title: 'Facebook Auto Comment and Direct Message',
-    category: 'GHL',
-    description:
-      'Auto response on Facebook page comment/like the posted comment and send a Direct Message',
-    imageUrl: '/work/ghl-3.png',
-  },
-  {
-    id: 'ghl-4',
-    title: 'Client Notification: Appointment & SMS Reminders',
-    category: 'GHL',
-    description:
-      'Send Email reminders day before, 1 hour and 5 minutes before the appointment and SMS reminder',
-    imageUrl: '/work/ghl-4.png',
-  },
-  {
-    id: 'ghl-5',
-    title: 'Sample Webpage',
-    category: 'GHL',
-    description: 'Ice Cream Shop Page',
-    imageUrl: '/work/ghl-5.png',
-    link: 'https://app.gohighlevel.com/v2/preview/uJnrBWhFYue2S1jXGNLa?notrack=true',
-  },
-  {
-    id: 'ghl-6',
-    title: 'Real Estate Brand Hub',
-    category: 'GHL',
-    description:
-      'Four-page GoHighLevel brand hub for a Metro Manila real-estate brokerage: hub, property pages and lead capture wired straight into the CRM pipeline. Client work; details blurred for confidentiality.',
-    imageUrl: '/work/diana-main-hub.png',
-  },
-  {
-    id: 'ghl-7',
-    title: 'Property Launch Funnel',
-    category: 'GHL',
-    description:
-      'Single-paste GoHighLevel funnel for a residential development launch: hero, unit gallery, enquiry form and booking flow, all scoped under one root. Client work; details blurred for confidentiality.',
-    imageUrl: '/work/nila-residences.png',
-  },
-  {
-    id: 'ghl-9',
-    title: 'Chatbot Lead to Pipeline Workflow',
-    category: 'GHL',
-    description:
-      'Native GoHighLevel workflow that turns every chatbot lead into a pipeline card: tag trigger from the Botpress upsert, find-opportunity guard so returning visitors never get a duplicate, create-opportunity on the not-found branch. Zero premium actions, published and tested end to end. Client work.',
-    imageUrl: '/work/diana-lead-workflow.png',
-  },
-  {
-    id: 'ghl-8',
-    title: 'Lead Nurture Workflow',
-    category: 'GHL',
-    description:
-      'Three-touch nurture for unbooked leads in GoHighLevel: tag trigger, do-not-contact gate, 48h / 3d / 7d waits, and a two-condition still-unbooked check before every email that drops anyone who books a viewing. Built node by node in the workflow builder. Concept demo for a fictional realty brand, not a client.',
-    imageUrl: '/work/bnj-nurture-workflow.png',
-  },
-  {
-    id: 'pos-1',
-    title: 'QA: Point-of-Sale Admin System',
-    category: 'Apps & AI',
-    description:
-      'Quality assurance on a client point-of-sale admin system: test plan written against the requirements, end-to-end passes across invoicing, stock and customer flows, defect reports with reproduction steps, and regression checks before release. Client build; my role was QA. Details blurred for confidentiality.',
-    imageUrl: '/work/pos-dashboard.png',
-  },
-  {
-    id: 'ai-1',
-    title: 'Ask My AI: Conversational Portfolio',
-    category: 'Apps & AI',
-    description:
-      'A portfolio you talk to. Next.js 14 with the Vercel AI SDK and Groq; the assistant swaps live React components into the stream mid-answer to show the relevant work instead of describing it.',
-    imageUrl: '/work/ai-avatar.png',
-    link: 'https://ai.jessiecalm.com',
-  },
-  {
-    id: 'chatbot-1',
-    title: 'AI Chat Assistant for a Property Site',
-    category: 'Apps & AI',
-    description:
-      'Botpress AI agent embedded on a GoHighLevel real-estate hub. It answers listing questions, asks for the buyer\u2019s timeline and details, then writes every lead into the CRM as a contact plus a chat-summary note through two HTTP tools, at zero per-message cost. Client work; details blurred for confidentiality.',
-    imageUrl: '/work/diana-chatbot.png',
-  },
-  {
-    id: 'raven-1',
-    title: 'Raven: AI Agent Council Dashboard',
-    category: 'Apps & AI',
-    description:
-      'Live ops view of a multi-agent AI team: who is online, who is working on what, one week at a time. A Python standard-library server reading local state only: no network, no model calls, zero tokens.',
-    imageUrl: '/work/raven-dashboard.png',
-  },
-  {
-    id: 'scraper-1',
-    title: 'Unattended Browser Automation',
-    category: 'Apps & AI',
-    description:
-      'A Playwright job that logs in through a real form, walks a paginated dataset, writes atomic CSV and JSON, and runs itself nightly under launchd with selector-drift warnings and failure alerts. No human in the loop.',
-    imageUrl: '/work/scraper-run.png',
-    link: 'https://github.com/hinahonjessiejayne/unattended-scraper',
-  },
-  {
-    id: 'grocal-1',
-    title: 'GroCal: Grocery Budget App',
-    category: 'Apps & AI',
-    description:
-      'Offline-first grocery budgeting app for Philippine shoppers: carts, per-store price tracking, reusable list templates and currency conversion. Expo, React Native and TypeScript.',
-    imageUrl: '/work/grocal.png',
-  },
-  {
-    id: 'ulam-1',
-    title: 'Ma, Anong Ulam?: Recipe App',
-    category: 'Apps & AI',
-    description:
-      'A fully offline Filipino recipe app: browse by category, search by dish or by ingredient. Expo, React Native and TypeScript, with a web build.',
-    imageUrl: '/work/ma-anong-ulam.png',
-  },
-];
+const isProjectCategory = (value: string): value is ProjectCategory => CATEGORY_SET.has(value);
+
+const toProject = (raw: (typeof portfolio.projects)[number]): Project => {
+  if (!isProjectCategory(raw.category)) {
+    throw new Error(`Unknown project category "${raw.category}" on ${raw.id}`);
+  }
+  return { ...raw, category: raw.category };
+};
+
+export const PROJECT_CATEGORIES: ProjectCategory[] = portfolio.categories.filter(isProjectCategory);
+
+export const PROJECTS: Project[] = portfolio.projects.map(toProject);
 
 export const SCHEDULER_URL = 'https://schedule.fillout.com/t/3Rgh4t69LFus';

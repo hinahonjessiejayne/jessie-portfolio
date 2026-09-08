@@ -23,6 +23,10 @@ export interface Project {
   description: string;
   imageUrl: string;
   link?: string;
+  /** Short proof points, rendered by the AI portfolio's cards; unused here. */
+  metrics?: string[];
+  /** Headline builds the AI portfolio shows for a general "your projects" ask. */
+  featured?: boolean;
 }
 
 export interface NavItem {
