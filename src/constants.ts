@@ -131,7 +131,7 @@ export const EDUCATION = {
   degree: "Bachelor's Degree in Computer Science",
 };
 
-export const PROJECT_CATEGORIES: ProjectCategory[] = ['N8N', 'Zapier', 'GHL', 'Web Apps'];
+export const PROJECT_CATEGORIES: ProjectCategory[] = ['N8N', 'Zapier', 'GHL', 'Apps & AI'];
 
 export const PROJECTS: Project[] = [
   {
@@ -245,11 +245,53 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'pos-1',
-    title: 'JirehSync POS: Admin Dashboard',
-    category: 'Web Apps',
+    title: 'QA: Point-of-Sale Admin System',
+    category: 'Apps & AI',
     description:
-      'Point-of-sale admin system with a live sales chart, product and stock management, invoicing and customer records. React 19, Vite 6 and TypeScript front and back, on SQLite.',
+      'Quality assurance on a client point-of-sale admin system: test plan written against the requirements, end-to-end passes across invoicing, stock and customer flows, defect reports with reproduction steps, and regression checks before release. Client build; my role was QA. Details blurred for confidentiality.',
     imageUrl: '/work/pos-dashboard.png',
+  },
+  {
+    id: 'ai-1',
+    title: 'Ask My AI: Conversational Portfolio',
+    category: 'Apps & AI',
+    description:
+      'A portfolio you talk to. Next.js 14 with the Vercel AI SDK and Groq; the assistant swaps live React components into the stream mid-answer to show the relevant work instead of describing it.',
+    imageUrl: '/work/ai-avatar.png',
+    link: 'https://ai.jessiecalm.com',
+  },
+  {
+    id: 'raven-1',
+    title: 'Raven: AI Agent Council Dashboard',
+    category: 'Apps & AI',
+    description:
+      'Live ops view of a multi-agent AI team: who is online, who is working on what, one week at a time. A Python standard-library server reading local state only: no network, no model calls, zero tokens.',
+    imageUrl: '/work/raven-dashboard.png',
+  },
+  {
+    id: 'scraper-1',
+    title: 'Unattended Browser Automation',
+    category: 'Apps & AI',
+    description:
+      'A Playwright job that logs in through a real form, walks a paginated dataset, writes atomic CSV and JSON, and runs itself nightly under launchd with selector-drift warnings and failure alerts. No human in the loop.',
+    imageUrl: '/work/scraper-run.png',
+    link: 'https://github.com/hinahonjessiejayne/unattended-scraper',
+  },
+  {
+    id: 'grocal-1',
+    title: 'GroCal: Grocery Budget App',
+    category: 'Apps & AI',
+    description:
+      'Offline-first grocery budgeting app for Philippine shoppers: carts, per-store price tracking, reusable list templates and currency conversion. Expo, React Native and TypeScript.',
+    imageUrl: '/work/grocal.png',
+  },
+  {
+    id: 'ulam-1',
+    title: 'Ma, Anong Ulam?: Recipe App',
+    category: 'Apps & AI',
+    description:
+      'A fully offline Filipino recipe app: browse by category, search by dish or by ingredient. Expo, React Native and TypeScript, with a web build.',
+    imageUrl: '/work/ma-anong-ulam.png',
   },
 ];
 
