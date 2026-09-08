@@ -261,6 +261,14 @@ export const PROJECTS: Project[] = [
     link: 'https://ai.jessiecalm.com',
   },
   {
+    id: 'chatbot-1',
+    title: 'AI Chat Assistant for a Property Site',
+    category: 'Apps & AI',
+    description:
+      'Botpress AI agent embedded on a GoHighLevel real-estate hub. It answers listing questions, asks for the buyer\u2019s timeline and details, then writes every lead into the CRM as a contact plus a chat-summary note through two HTTP tools, at zero per-message cost. Client work; details blurred for confidentiality.',
+    imageUrl: '/work/diana-chatbot.png',
+  },
+  {
     id: 'raven-1',
     title: 'Raven: AI Agent Council Dashboard',
     category: 'Apps & AI',
