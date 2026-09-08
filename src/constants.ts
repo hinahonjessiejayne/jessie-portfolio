@@ -248,7 +248,7 @@ export const PROJECTS: Project[] = [
     title: 'Chatbot Lead to Pipeline Workflow',
     category: 'GHL',
     description:
-      'Native GoHighLevel workflow that turns every chatbot lead into a pipeline card: tag trigger from the Botpress upsert, find-opportunity guard so returning visitors never get a duplicate, create-opportunity on the not-found branch. Zero premium actions, published and tested end to end. Client work; details blurred for confidentiality.',
+      'Native GoHighLevel workflow that turns every chatbot lead into a pipeline card: tag trigger from the Botpress upsert, find-opportunity guard so returning visitors never get a duplicate, create-opportunity on the not-found branch. Zero premium actions, published and tested end to end. Client work.',
     imageUrl: '/work/diana-lead-workflow.png',
   },
   {
