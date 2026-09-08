@@ -47,6 +47,9 @@ export default {
         'spin-slow': 'spin 10s linear infinite',
         scan: 'scan 3s linear infinite',
         marquee: 'marquee 45s linear infinite',
+        drip: 'drip 3.6s ease-in-out infinite',
+        droplet: 'droplet 3.6s ease-in infinite',
+        'honey-fill': 'honey-fill 4s ease-in-out infinite',
       },
       keyframes: {
         float: {
@@ -60,6 +63,22 @@ export default {
         marquee: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
+        },
+        /* Honey gathering at the lip of a comb cell, never quite falling. */
+        drip: {
+          '0%, 100%': { transform: 'scaleY(0.55)' },
+          '55%': { transform: 'scaleY(1)' },
+        },
+        /* The bead that does fall, timed to leave as the drip retracts. */
+        droplet: {
+          '0%, 45%': { transform: 'translateY(0) scale(0.7)', opacity: '0' },
+          '60%': { transform: 'translateY(6px) scale(1)', opacity: '1' },
+          '100%': { transform: 'translateY(54px) scale(0.5)', opacity: '0' },
+        },
+        /* Cells warming through, as if filling. */
+        'honey-fill': {
+          '0%, 100%': { opacity: '0.18' },
+          '50%': { opacity: '0.6' },
         },
       },
     },
