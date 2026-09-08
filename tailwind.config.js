@@ -46,6 +46,7 @@ export default {
         float: 'float 6s ease-in-out infinite',
         'spin-slow': 'spin 10s linear infinite',
         scan: 'scan 3s linear infinite',
+        marquee: 'marquee 45s linear infinite',
       },
       keyframes: {
         float: {
@@ -55,6 +56,10 @@ export default {
         scan: {
           '0%': { transform: 'translateY(-100%)' },
           '100%': { transform: 'translateY(100%)' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
     },

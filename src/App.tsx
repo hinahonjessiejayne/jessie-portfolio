@@ -8,6 +8,7 @@ import HexGrid from './components/HexGrid';
 import Portfolio from './components/Portfolio';
 import Scheduler from './components/Scheduler';
 import Services from './components/Services';
+import ToolMarquee from './components/ToolMarquee';
 
 const RIPPLE_LIFETIME_MS = 800;
 
@@ -67,6 +68,7 @@ function App() {
         <Header isDark={isDark} toggleTheme={toggleTheme} />
         <main className="space-y-0">
           <Hero />
+          <ToolMarquee />
           <Services />
           <Experience />
           <Portfolio />
