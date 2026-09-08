@@ -18,6 +18,10 @@ import portfolio from './data/projects.json';
 
 export const PROFILE_IMAGE = '/profile.jpg';
 
+/** Pointy-top hexagon clip, the comb cell used across the site. */
+export const HEX_CLIP =
+  '[clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%)]';
+
 export const PERSONAL_INFO = {
   about:
     'Full-stack Developer and Automation Specialist leveraging AI-assisted software engineering tools (Claude Code, Cursor, GitHub Copilot) to accelerate build cycles, ship clean React/TypeScript applications, and optimize business operations',

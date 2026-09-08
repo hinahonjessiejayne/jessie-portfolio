@@ -1,12 +1,34 @@
 import { useEffect, useState } from 'react';
 import { Menu, Moon, Sun, X } from 'lucide-react';
-import { NAV_ITEMS, PROFILE_IMAGE } from '../constants';
+import { HEX_CLIP, NAV_ITEMS, PROFILE_IMAGE } from '../constants';
 import { scrollToSection } from '../lib/smoothScroll';
 
 interface HeaderProps {
   isDark: boolean;
   toggleTheme: () => void;
 }
+
+/**
+ * A whisper of comb under the glass. Masked so it lives at the two ends of
+ * the pill and clears out behind the links; the blur and tint stay on the
+ * container itself, untouched.
+ */
+const CombVeil = ({ id }: { id: string }) => (
+  <svg
+    aria-hidden="true"
+    className="pointer-events-none absolute inset-0 -z-10 h-full w-full text-brand-500/20 dark:text-brand-400/[0.18] [mask-image:linear-gradient(to_right,#000,transparent_30%,transparent_70%,#000)] [-webkit-mask-image:linear-gradient(to_right,#000,transparent_30%,transparent_70%,#000)]"
+  >
+    <defs>
+      {/* Pointy-top hexes, r=9: tile is √3·r wide by 3r tall, odd rows offset. */}
+      <pattern id={id} width="15.59" height="27" patternUnits="userSpaceOnUse">
+        <path d="M7.79 0 L15.59 4.5 L15.59 13.5 L7.79 18 L0 13.5 L0 4.5 Z" fill="none" stroke="currentColor" strokeWidth="0.8" />
+        <path d="M15.59 13.5 L23.38 18 L23.38 27 L15.59 31.5 L7.79 27 L7.79 18 Z" fill="none" stroke="currentColor" strokeWidth="0.8" />
+        <path d="M0 13.5 L7.79 18 L7.79 27 L0 31.5 L-7.79 27 L-7.79 18 Z" fill="none" stroke="currentColor" strokeWidth="0.8" />
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill={`url(#${id})`} />
+  </svg>
+);
 
 const Header = ({ isDark, toggleTheme }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,26 +69,34 @@ const Header = ({ isDark, toggleTheme }: HeaderProps) => {
 
   return (
     <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
-      <nav className="pointer-events-auto liquid-glass rounded-full px-6 py-3 flex items-center justify-between gap-6 md:gap-12 transition-all duration-300 w-full max-w-5xl shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] border border-white/20 dark:border-white/10">
+      <nav className="pointer-events-auto liquid-glass relative isolate overflow-hidden rounded-full px-6 py-3 flex items-center justify-between gap-6 md:gap-12 transition-all duration-300 w-full max-w-5xl shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] border border-white/20 dark:border-white/10">
+        <CombVeil id="nav-comb" />
         <div className="flex-shrink-0 flex items-center">
           <a
             href="#home"
             onClick={(event) => handleNavClick(event, '#home')}
             className="flex items-center gap-2 group"
           >
-            {imageError ? (
-              <div className="w-8 h-8 rounded-full bg-brand-400 flex items-center justify-center text-xs font-bold text-black ring-2 ring-brand-400">
-                J
-              </div>
-            ) : (
-              <img
-                src={PROFILE_IMAGE}
-                alt="Profile"
-                onError={() => setImageError(true)}
-                referrerPolicy="no-referrer"
-                className="w-8 h-8 rounded-full object-cover shadow-lg group-hover:scale-110 transition-transform ring-2 ring-brand-400"
-              />
-            )}
+            {/* The avatar is a comb cell: gold rim, portrait inside. */}
+            <span
+              className={`relative block h-9 w-8 bg-brand-400 transition-transform group-hover:scale-110 ${HEX_CLIP}`}
+            >
+              {imageError ? (
+                <span
+                  className={`absolute inset-[2px] flex items-center justify-center bg-dark-bg text-xs font-bold text-brand-400 ${HEX_CLIP}`}
+                >
+                  J
+                </span>
+              ) : (
+                <img
+                  src={PROFILE_IMAGE}
+                  alt="Profile"
+                  onError={() => setImageError(true)}
+                  referrerPolicy="no-referrer"
+                  className={`absolute inset-[2px] h-[calc(100%-4px)] w-[calc(100%-4px)] object-cover ${HEX_CLIP}`}
+                />
+              )}
+            </span>
             <span className="text-lg font-serif font-bold tracking-wider text-gray-900 dark:text-white hidden sm:block">
               Jessie
             </span>
@@ -116,7 +146,8 @@ const Header = ({ isDark, toggleTheme }: HeaderProps) => {
       </nav>
 
       {isMenuOpen && (
-        <div className="absolute top-24 left-4 right-4 p-4 rounded-2xl liquid-glass border border-white/20 dark:border-white/10 shadow-2xl pointer-events-auto md:hidden animate-in slide-in-from-top-4 fade-in duration-200">
+        <div className="absolute top-24 left-4 right-4 p-4 rounded-2xl liquid-glass isolate overflow-hidden border border-white/20 dark:border-white/10 shadow-2xl pointer-events-auto md:hidden animate-in slide-in-from-top-4 fade-in duration-200">
+          <CombVeil id="menu-comb" />
           <div className="flex flex-col space-y-2">
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.href.substring(1);
