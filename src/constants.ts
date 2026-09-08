@@ -16,8 +16,7 @@ import type {
 } from './types';
 import portfolio from './data/projects.json';
 
-export const PROFILE_IMAGE =
-  'https://lh3.googleusercontent.com/d/18EafyH0BU_s_OWzlVp303Y3E3lgKScnQ';
+export const PROFILE_IMAGE = '/profile.jpg';
 
 export const PERSONAL_INFO = {
   about:

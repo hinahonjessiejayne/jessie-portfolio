@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import { motion, useReducedMotion, useScroll, useSpring } from 'framer-motion';
-import { Download } from 'lucide-react';
 import { EDUCATION, EXPERIENCE } from '../constants';
 
 /**
@@ -83,16 +82,10 @@ const Experience = () => {
             <h3 className="mb-6 font-serif text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">
               Work Experience
             </h3>
-            <p className="mb-8 border-l border-light-border pl-4 leading-relaxed text-light-muted dark:border-dark-border dark:text-dark-muted">
+            <p className="border-l border-light-border pl-4 leading-relaxed text-light-muted dark:border-dark-border dark:text-dark-muted">
               A timeline of my professional journey, highlighting key roles in
               management, engineering, and quality assurance.
             </p>
-            <a
-              href="#"
-              className="inline-flex items-center text-sm font-semibold uppercase tracking-wider text-brand-600 transition-colors hover:text-brand-500 dark:text-brand-400 dark:hover:text-brand-300"
-            >
-              <Download className="mr-2 h-4 w-4" /> Download Full Resume
-            </a>
           </motion.div>
 
           <div className="lg:col-span-2">
