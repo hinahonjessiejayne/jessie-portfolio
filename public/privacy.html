@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy | Jessie Hinahon</title>
+  <meta name="description" content="Privacy policy for n8n-project, Jessie Hinahon's private automation tool." />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #FAFAFA;
+      --card: #FFFFFF;
+      --border: #E4E4E7;
+      --text: #18181B;
+      --muted: #71717A;
+      --accent: #967B27;
+      --space: clamp(1rem, 0.6rem + 2vw, 2rem);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #050505;
+        --card: #0F0F0F;
+        --border: #272727;
+        --text: #E0E0E0;
+        --muted: #A0A0A0;
+        --accent: #D4AF37;
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 400 clamp(1rem, 0.95rem + 0.25vw, 1.0625rem) / 1.65 Inter, system-ui, sans-serif;
+    }
+    .page {
+      width: min(100% - 2rem, 44rem);
+      margin-inline: auto;
+      padding-block: var(--space) calc(var(--space) * 2);
+    }
+    .doc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: var(--space);
+    }
+    h1, h2 { font-family: "Playfair Display", Georgia, serif; font-weight: 600; line-height: 1.2; }
+    h1 { font-size: clamp(1.75rem, 1.3rem + 2vw, 2.5rem); margin: 0 0 0.25em; }
+    h2 { font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.45rem); margin: 2em 0 0.5em; }
+    p, ul { margin: 0 0 1em; }
+    ul { padding-left: 1.25em; }
+    li + li { margin-top: 0.35em; }
+    .meta { color: var(--muted); margin-bottom: 2em; }
+    code { font-family: "Fira Code", ui-monospace, monospace; font-size: 0.9em; overflow-wrap: anywhere; }
+    a { color: var(--accent); text-underline-offset: 0.2em; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+    .back { display: inline-block; margin-bottom: 1.5rem; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a class="back" href="/">&larr; jessiecalm.com</a>
+    <article class="doc">
+      <h1>Privacy Policy</h1>
+      <p class="meta">n8n-project &middot; Last updated 3 October 2026</p>
+
+      <p>n8n-project is a private automation tool built and run by Jessie Hinahon for her own
+        work. It is not offered to the public. It signs in only to Google accounts that
+        Jessie owns, and only she can connect an account to it.</p>
+
+      <h2>What it accesses</h2>
+      <ul>
+        <li><strong>Google Drive</strong> (<code>drive.metadata.readonly</code>): file names, folders and
+          change dates in chosen folders, to report what changed. It cannot open, edit or delete files.</li>
+        <li><strong>Google Sheets</strong> (<code>spreadsheets.readonly</code>): reads a task tracker to send
+          task reminders. It cannot edit any sheet.</li>
+        <li><strong>Gmail</strong> (<code>gmail.readonly</code>, <code>gmail.compose</code>): reads recent mail
+          to build a daily summary, and saves reply drafts for Jessie to review and send herself.</li>
+        <li><strong>Google Calendar</strong> (<code>calendar.events</code>): reads upcoming events for
+          reminders and checks meeting invitations.</li>
+      </ul>
+
+      <h2>How the data is used</h2>
+      <p>Data is used only to produce Jessie's own reports, reminders and drafts. Summaries are
+        posted to private Discord and Slack channels that she controls. Email text may be
+        processed by an AI model (Anthropic Claude) to write the daily summary and draft replies.
+        Links are removed before it is sent.</p>
+
+      <h2>What it does not do</h2>
+      <ul>
+        <li>It does not sell, rent or share Google user data with anyone.</li>
+        <li>It does not use Google user data for advertising.</li>
+        <li>It does not transfer Google user data except as described above to provide these features.</li>
+      </ul>
+      <p>Use of information received from Google APIs follows the
+        <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services
+        User Data Policy</a>, including the Limited Use requirements.</p>
+
+      <h2>Storage and removal</h2>
+      <p>Sign-in tokens and run history are stored encrypted on Jessie's own machine and are
+        not shared. Access can be removed at any time from
+        <a href="https://myaccount.google.com/permissions">Google Account &rarr; Third-party connections</a>.</p>
+
+      <h2>Contact</h2>
+      <p>Questions: <a href="mailto:hinahonjessiejayne@gmail.com">hinahonjessiejayne@gmail.com</a></p>
+    </article>
+  </main>
+</body>
+</html>
