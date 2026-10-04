@@ -16,7 +16,9 @@ const MIN_FILL_MS = 3000
 const LIMIT = 5
 const WINDOW_MS = 10 * 60_000
 const VISIT_LIMIT = 10 // visits per address per window: generous, many phones share one carrier address
-const VISIT_BUDGET = 120 // visits per minute for the whole instance; the rest are dropped, the count is approximate
+// Visits per minute for the whole instance; the rest are dropped, so the count is approximate. The store takes one
+// call at a time (a script lock), so this stays well under what it can serve and leaves room for a real lead.
+const VISIT_BUDGET = 20
 const VISIT_TIMEOUT_MS = 6000
 const BOT = /\b(bot|crawler|spider)\b|bot\/|facebookexternalhit|headless|preview|curl|wget|python-requests|node-fetch/i
 const visits = new Map<string, number[]>() // visits never spend the form's tries
@@ -44,7 +46,10 @@ function limited(ip: string, bucket = hits, limit = LIMIT) {
   return recent.length > limit
 }
 
-const known = (src: string) => (SOURCES.includes(src) ? src : 'site')
+const known = (value: unknown) => {
+  const src = field(value, 30).toLowerCase()
+  return SOURCES.includes(src) ? src : 'site'
+}
 
 // One call to the lead store. Apps Script answers a POST with a redirect to the result; fetch follows it as a GET.
 function callStore(payload: object, timeoutMs: number) {
@@ -60,18 +65,22 @@ function callStore(payload: object, timeoutMs: number) {
 }
 
 export async function POST(request: Request) {
-  const origin = request.headers.get('origin')
-  if (!origin || new URL(origin).host !== new URL(request.url).host) return reply({ ok: false, error: 'forbidden' }, 403)
+  let sameSite = false
+  try { sameSite = new URL(request.headers.get('origin') ?? '').host === new URL(request.url).host } catch { /* no origin, "null" or a malformed one: not this site */ }
+  if (!sameSite) return reply({ ok: false, error: 'forbidden' }, 403)
 
   const ip = (request.headers.get('x-forwarded-for') ?? '').split(',')[0].trim() || 'unknown'
+  // A body that is too long or is not the form's JSON is a try at the form too, and a long one is refused unread.
+  const refuse = (error: string, status: number) => { limited(ip); return reply({ ok: false, error }, status) }
+  if (Number(request.headers.get('content-length')) > MAX_BODY) return refuse('That is too long.', 413)
   const raw = await request.text()
-  if (raw.length > MAX_BODY) return reply({ ok: false, error: 'That is too long.' }, 413)
+  if (raw.length > MAX_BODY) return refuse('That is too long.', 413)
   let body: Record<string, unknown>
-  try { body = JSON.parse(raw) } catch { return reply({ ok: false, error: 'bad request' }, 400) }
-  if (!body || typeof body !== 'object' || Array.isArray(body)) return reply({ ok: false, error: 'bad request' }, 400)
+  try { body = JSON.parse(raw) } catch { return refuse('bad request', 400) }
+  if (!body || typeof body !== 'object' || Array.isArray(body)) return refuse('bad request', 400)
 
   // A visit has its own allowance, checked before the form's, so opening the page never uses up a try at the form.
-  if (body.event === 'visit') return visit(request, ip, known(field(body.source, 30).toLowerCase()))
+  if (body.event === 'visit') return visit(request, ip, known(body.source))
   if (limited(ip)) return reply({ ok: false, error: 'Too many tries. Please wait a few minutes.' }, 429)
 
   if (field(body.website, 200) || Number(body.elapsed) < MIN_FILL_MS) return reply({ ok: true })
@@ -83,9 +92,8 @@ export async function POST(request: Request) {
   if (pain.length < 10) return reply({ ok: false, error: 'Tell me a little more about the task.' }, 422)
   if (body.consent !== true) return reply({ ok: false, error: 'Please tick the consent box.' }, 422)
 
-  const src = field(body.source, 30).toLowerCase()
   const lead = {
-    source: known(src),
+    source: known(body.source),
     name: field(body.name, 80),
     contact,
     business: field(body.business, 120),
@@ -108,7 +116,8 @@ export async function POST(request: Request) {
 
 // One visit to the page, counted per day and source. Always answers ok: the page never waits on it, and a bot
 // learns nothing. Link previews and crawlers are not counted; neither is a flood, by address or in total, so the
-// count is approximate and a burst of visits can never keep a real lead out of the store.
+// count is approximate and a burst of visits is kept well below what would hold up a real lead (best effort:
+// the limits are per server instance).
 async function visit(request: Request, ip: string, source: string) {
   const minute = Math.floor(Date.now() / 60_000)
   if (budget.minute !== minute) budget = { minute, used: 0 }
