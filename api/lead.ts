@@ -2,6 +2,9 @@
  * POST /api/lead: the free-idea form (public/free-idea) -> the Jessie Calm lead store, a Google Sheet
  * behind an Apps Script web app (N8N Project/leads/apps-script/Code.gs).
  *
+ * The same endpoint counts a visit to the page: {event: "visit", source} adds one to that day's total for the
+ * source in the store. A visit carries no personal data and nothing about the visitor is kept.
+ *
  * Env (Vercel, Production): LEAD_STORE_URL, LEAD_SECRET. The secret stays on the server.
  * Spam: same-origin only, a honeypot field, a minimum fill time and a per-IP limit. Bots get a fake
  * success so they learn nothing. The store itself dedupes a repeat contact within 30 days.
@@ -11,6 +14,7 @@ const MAX_BODY = 4000
 const MIN_FILL_MS = 3000
 const LIMIT = 5
 const WINDOW_MS = 10 * 60_000
+const BOT = /bot|crawl|spider|preview|facebookexternalhit|headless|monitor|curl|wget|python|node/i
 const hits = new Map<string, number[]>() // per instance, best effort
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
@@ -42,6 +46,8 @@ export async function POST(request: Request) {
   if (raw.length > MAX_BODY) return reply({ ok: false, error: 'That is too long.' }, 413)
   let body: Record<string, unknown>
   try { body = JSON.parse(raw) } catch { return reply({ ok: false, error: 'bad request' }, 400) }
+
+  if (body.event === 'visit') return visit(request, field(body.source, 30).toLowerCase())
 
   if (field(body.website, 200) || Number(body.elapsed) < MIN_FILL_MS) return reply({ ok: true })
 
@@ -80,4 +86,21 @@ export async function POST(request: Request) {
   } catch {
     return reply({ ok: false, error: 'Something went wrong on my side. Please try again later.' }, 502)
   }
+}
+
+// One visit to the page, counted per day and source. Always answers ok: the page never waits on it, and a bot
+// learns nothing. Link previews and crawlers are not counted.
+async function visit(request: Request, src: string) {
+  const store = process.env.LEAD_STORE_URL
+  const secret = process.env.LEAD_SECRET
+  if (!store || !secret || BOT.test(request.headers.get('user-agent') ?? '')) return reply({ ok: true })
+  try {
+    await fetch(store, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({ secret, action: 'click', source: SOURCES.includes(src) ? src : 'site' }),
+      signal: AbortSignal.timeout(20_000),
+    })
+  } catch { /* a missed count is not worth an error on the page */ }
+  return reply({ ok: true })
 }

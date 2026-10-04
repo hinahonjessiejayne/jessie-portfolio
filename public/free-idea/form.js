@@ -1,9 +1,22 @@
 // The free-idea form -> POST /api/lead. ?src=tiktok (facebook, instagram, messenger...) records where the
-// visitor came from; the server keeps only known sources.
+// visitor came from; the server keeps only known sources. The same source is used to count visits.
 const form = document.getElementById('lead-form')
 const status = document.getElementById('status')
 const started = Date.now()
 const source = new URLSearchParams(location.search).get('src') || 'site'
+
+// Count the visit, once per browser session, by source only: no name, address or cookie is sent or kept.
+try {
+  if (!navigator.webdriver && !sessionStorage.getItem('free-idea-visit')) {
+    sessionStorage.setItem('free-idea-visit', '1')
+    fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ event: 'visit', source }),
+      keepalive: true,
+    }).catch(() => {})
+  }
+} catch { /* private mode without storage: the visit is simply not counted */ }
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault()
