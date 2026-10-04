@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How Your Details Are Handled | Jessie Calm</title>
+  <meta name="description" content="How Jessie Calm handles the details sent through the free workflow idea form." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#050505" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #050505;
+      --surface: #0f0f0f;
+      --text: #e0e0e0;
+      --muted: #a0a0a0;
+      --gold: #d4af37;
+      --gold-light: #e0cb70;
+      --line: rgba(212, 175, 55, 0.35);
+      --space: clamp(1rem, 0.6rem + 2vw, 2rem);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 400 clamp(1rem, 0.95rem + 0.25vw, 1.0625rem) / 1.65 Inter, system-ui, sans-serif;
+    }
+    .page { width: min(100% - 2rem, 44rem); margin-inline: auto; padding-block: var(--space) calc(var(--space) * 2); }
+    .doc { background: var(--surface); border: 1px solid var(--line); border-radius: 1rem; padding: var(--space); }
+    h1, h2 { font-family: "Playfair Display", Georgia, serif; font-weight: 700; color: #fff; line-height: 1.2; }
+    h1 { font-size: clamp(1.75rem, 1.3rem + 2vw, 2.5rem); margin: 0 0 0.25em; }
+    h2 { font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.45rem); margin: 2em 0 0.5em; }
+    p, ul { margin: 0 0 1em; }
+    ul { padding-left: 1.25em; }
+    li + li { margin-top: 0.35em; }
+    .meta { color: var(--muted); margin-bottom: 2em; }
+    a { color: var(--gold-light); text-underline-offset: 0.2em; }
+    a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
+    .back { display: inline-block; margin-bottom: 1.5rem; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a class="back" href="/free-idea/">&larr; Back to the form</a>
+    <article class="doc">
+      <h1>How your details are handled</h1>
+      <p class="meta">Free workflow idea form &middot; Last updated 4 October 2026</p>
+
+      <p>This page covers what you send through the free workflow idea form and the comments or
+        messages you send to Jessie Calm on Facebook, TikTok and Instagram asking for one.</p>
+
+      <h2>What is collected</h2>
+      <ul>
+        <li>Your name, if you give it</li>
+        <li>Where to reply: an email address, a social media handle or a phone number</li>
+        <li>Your business and the task you want to automate</li>
+        <li>Which page or social account you came from, and when you sent it</li>
+      </ul>
+
+      <h2>Why</h2>
+      <p>Only to reply to your request with a workflow idea and, if you answer, to talk about it
+        with you. You will not be added to a mailing list, and your details are never sold or shared
+        for advertising.</p>
+
+      <h2>Where it is kept</h2>
+      <p>In a private Google Sheet that only Jessie Calm can open. The form runs on Vercel and the
+        sheet on Google. To speed up replies, the task you describe may be read by an AI model
+        (Anthropic Claude) to draft an idea, which is always checked before anything is sent.</p>
+
+      <h2>How long</h2>
+      <p>Up to 12 months after our last message, then deleted. Ask any time and it is deleted sooner.</p>
+
+      <h2>Your rights</h2>
+      <p>Under the Philippine Data Privacy Act of 2012 you can ask to see, correct or delete your
+        details, or object to them being kept. Email
+        <a href="mailto:hellojessiecalm@gmail.com">hellojessiecalm@gmail.com</a> and it will be done
+        within 15 days.</p>
+    </article>
+  </main>
+</body>
+</html>

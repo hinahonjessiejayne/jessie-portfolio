@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Workflow Idea | Jessie Calm</title>
+  <meta name="description" content="Tell Jessie Calm one task you repeat every week and get a free written idea for automating it." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    /* Jessie Calm brand (N8N Project/social/brand/brand.css): dark, gold, hex grid */
+    :root {
+      --bg: #050505;
+      --surface: #0f0f0f;
+      --field: #141414;
+      --text: #e0e0e0;
+      --muted: #a0a0a0;
+      --gold: #d4af37;
+      --gold-light: #e0cb70;
+      --gold-dark: #967b27;
+      --line: rgba(212, 175, 55, 0.35);
+      --error: #f87171;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+      --mono: 'Fira Code', ui-monospace, monospace;
+      --space: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+      --radius: 1rem;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font: 400 clamp(1rem, 0.95rem + 0.25vw, 1.0625rem) / 1.6 var(--sans);
+      background:
+        radial-gradient(ellipse at 85% 0%, rgba(212, 175, 55, 0.14), transparent 55%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 0l28 16v32L28 64 0 48V16zM28 64l28 16v32M28 64L0 80v32' fill='none' stroke='%23d4af37' stroke-opacity='0.06' stroke-width='1'/%3E%3C/svg%3E"),
+        var(--bg);
+    }
+    .page {
+      width: min(100% - 2rem, 70rem);
+      margin-inline: auto;
+      padding-block: var(--space) calc(var(--space) * 2);
+      display: grid;
+      gap: var(--space);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr));
+      align-items: start;
+    }
+    .brand { grid-column: 1 / -1; font-family: var(--mono); color: var(--gold); text-decoration: none; letter-spacing: 0.08em; }
+    .kicker { font-family: var(--mono); font-size: 0.8rem; color: var(--gold); letter-spacing: 0.22em; text-transform: uppercase; margin: 0 0 1rem; }
+    h1 {
+      font-family: var(--serif);
+      font-weight: 700;
+      color: #fff;
+      font-size: clamp(2rem, 1.2rem + 3.4vw, 3.5rem);
+      line-height: 1.08;
+      text-wrap: balance;
+      margin: 0 0 1.25rem;
+    }
+    .gold {
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold) 45%, var(--gold-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .lede { color: var(--muted); max-width: 34rem; margin: 0 0 2rem; }
+    .gets { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.85rem; max-width: 34rem; }
+    .gets li { display: grid; grid-template-columns: 2.25rem 1fr; gap: 0.75rem; align-items: start; }
+    .gets b { color: #fff; font-weight: 600; }
+    .num {
+      font-family: var(--mono);
+      color: var(--gold-light);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      text-align: center;
+      font-size: 0.85rem;
+      line-height: 2rem;
+    }
+    .card {
+      background: rgba(15, 15, 15, 0.92);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: var(--space);
+    }
+    .card h2 { font-family: var(--serif); color: #fff; font-size: clamp(1.35rem, 1.1rem + 1vw, 1.75rem); margin: 0 0 1.25rem; }
+    form { display: grid; gap: 1.1rem; }
+    label { display: grid; gap: 0.4rem; font-weight: 500; }
+    .hint { color: var(--muted); font-weight: 400; font-size: 0.875rem; }
+    input, textarea {
+      width: 100%;
+      font: inherit;
+      color: var(--text);
+      background: var(--field);
+      border: 1px solid #2a2a2a;
+      border-radius: 0.6rem;
+      padding: 0.75rem 0.9rem;
+    }
+    textarea { min-height: 7.5rem; resize: vertical; }
+    input:focus-visible, textarea:focus-visible, button:focus-visible, a:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+    .consent { grid-template-columns: auto 1fr; align-items: start; gap: 0.7rem; font-weight: 400; font-size: 0.9rem; color: var(--muted); }
+    .consent input { width: 1.15rem; height: 1.15rem; margin-top: 0.2rem; accent-color: var(--gold); }
+    a { color: var(--gold-light); text-underline-offset: 0.2em; }
+    .trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+    button {
+      font: 600 1rem var(--sans);
+      color: #050505;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold) 50%, var(--gold-light));
+      border: 0;
+      border-radius: 999px;
+      padding: 0.9rem 1.5rem;
+      cursor: pointer;
+    }
+    button:disabled { opacity: 0.6; cursor: progress; }
+    .status { min-height: 1.5rem; margin: 0; font-size: 0.95rem; }
+    .status.error { color: var(--error); }
+    .done { text-align: center; padding-block: 1rem; }
+    .done p { color: var(--muted); margin: 0; }
+    [hidden] { display: none !important; }
+    footer { grid-column: 1 / -1; color: var(--muted); font-size: 0.85rem; font-family: var(--mono); }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a class="brand" href="/">jessiecalm.com</a>
+
+    <section aria-labelledby="title">
+      <p class="kicker">Free &middot; one workflow idea</p>
+      <h1 id="title">Tell me one task you repeat every week. <span class="gold">I'll show you how to automate it.</span></h1>
+      <p class="lede">I build automations, AI chat and voice agents, websites and CRMs for small businesses.
+        Describe the task and I'll write back a short, plain-language plan. No call, no cost.</p>
+      <ul class="gets">
+        <li><span class="num" aria-hidden="true">01</span><span><b>The trigger:</b> what starts it, like a form, a message or a new booking.</span></li>
+        <li><span class="num" aria-hidden="true">02</span><span><b>The steps:</b> what happens on its own, in order.</span></li>
+        <li><span class="num" aria-hidden="true">03</span><span><b>The tools:</b> n8n, Zapier, Make or GoHighLevel, and what you already have.</span></li>
+        <li><span class="num" aria-hidden="true">04</span><span><b>The payoff:</b> roughly how much time it gives back each week.</span></li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="form-title">
+      <div id="form-wrap">
+        <h2 id="form-title">Send me your task</h2>
+        <form id="lead-form" novalidate>
+          <label>Your name
+            <input name="name" autocomplete="given-name" maxlength="80" />
+          </label>
+          <label>Where should I reply?
+            <span class="hint" id="contact-hint">Email, Facebook/TikTok handle, or phone</span>
+            <input name="contact" required maxlength="120" aria-describedby="contact-hint" autocomplete="email" />
+          </label>
+          <label>Your business
+            <span class="hint" id="business-hint">What you do, in a few words</span>
+            <input name="business" maxlength="120" aria-describedby="business-hint" />
+          </label>
+          <label>The task you repeat
+            <span class="hint" id="pain-hint">Example: copying every new inquiry from Messenger into a spreadsheet</span>
+            <textarea name="pain" required maxlength="300" aria-describedby="pain-hint"></textarea>
+          </label>
+          <div class="trap" aria-hidden="true">
+            <label>Website <input name="website" tabindex="-1" autocomplete="off" /></label>
+          </div>
+          <label class="consent">
+            <input type="checkbox" name="consent" required />
+            <span>I agree that Jessie Calm may keep these details to reply to this request.
+              <a href="/free-idea/privacy.html">How my details are handled</a>.</span>
+          </label>
+          <button type="submit">Send my task</button>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="done" id="done" hidden tabindex="-1">
+        <h2>Got it, thank you.</h2>
+        <p>Your workflow idea is on its way to the contact you gave.</p>
+      </div>
+    </section>
+
+    <footer>Jessie Calm &middot; automations that give you your time back</footer>
+  </main>
+  <script src="/free-idea/form.js" defer></script>
+</body>
+</html>
