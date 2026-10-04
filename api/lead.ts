@@ -9,6 +9,7 @@
  * Spam: same-origin only, a honeypot field, a minimum fill time and a per-IP limit. Bots get a fake
  * success so they learn nothing. The store itself dedupes a repeat contact within 30 days.
  */
+// Also in N8N Project leads/apps-script/Code.gs (SOURCES) and social/stats/collect.py (LEAD_SOURCES): change the three together.
 const SOURCES = ['facebook', 'tiktok', 'instagram', 'messenger', 'site', 'other']
 const MAX_BODY = 4000
 const MIN_FILL_MS = 3000
@@ -34,7 +35,10 @@ const field = (v: unknown, max: number) =>
 
 function limited(ip: string, bucket = hits, limit = LIMIT) {
   const now = Date.now()
+  // addresses are held only while they have a try inside the window: a quiet one is dropped at its next look
+  for (const [key, times] of bucket) if (now - times[times.length - 1] >= WINDOW_MS) bucket.delete(key)
   const recent = (bucket.get(ip) ?? []).filter((t) => now - t < WINDOW_MS)
+  if (recent.length > limit) return true // already over: nothing more is remembered about it
   recent.push(now)
   bucket.set(ip, recent)
   return recent.length > limit
