@@ -3,9 +3,10 @@
 const form = document.getElementById('lead-form')
 const status = document.getElementById('status')
 const started = Date.now()
-const source = new URLSearchParams(location.search).get('src') || 'site'
+const source = (new URLSearchParams(location.search).get('src') || 'site').slice(0, 30) // a long ?src= must not make the form too long to send
 
-// Count the visit, once per browser session, by source only: no name, address or cookie is sent or kept.
+// Count the visit, once per browser session, by source only: no name or cookie is sent, and the count keeps no
+// address (the server holds the sender's address in memory for its rate limit only: see privacy.html).
 try {
   if (!navigator.webdriver && !sessionStorage.getItem('free-idea-visit')) {
     sessionStorage.setItem('free-idea-visit', '1')

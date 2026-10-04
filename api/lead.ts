@@ -3,7 +3,8 @@
  * behind an Apps Script web app (N8N Project/leads/apps-script/Code.gs).
  *
  * The same endpoint counts a visit to the page: {event: "visit", source} adds one to that day's total for the
- * source in the store. A visit carries no personal data and nothing about the visitor is kept.
+ * source in the store. A visit carries no personal data and the store keeps nothing about the visitor; the
+ * sender's address is held in memory for the rate-limit window only.
  *
  * Env (Vercel, Production): LEAD_STORE_URL, LEAD_SECRET. The secret stays on the server.
  * Spam: same-origin only, a honeypot field, a minimum fill time and a per-IP limit. Bots get a fake
@@ -83,7 +84,7 @@ export async function POST(request: Request) {
   if (body.event === 'visit') return visit(request, ip, known(body.source))
   if (limited(ip)) return reply({ ok: false, error: 'Too many tries. Please wait a few minutes.' }, 429)
 
-  if (field(body.website, 200) || Number(body.elapsed) < MIN_FILL_MS) return reply({ ok: true })
+  if (field(body.website, 200) || !(Number(body.elapsed) >= MIN_FILL_MS)) return reply({ ok: true }) // a missing fill time is a bot too
 
   const contact = field(body.contact, 120)
   const pain = field(body.pain, 300)
