@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build Your Website Plan | Jessie Calm</title>
+<meta name="description" content="Answer 7 quick questions and get a personal website plan: the pages you need, what to get ready first and what to expect.">
+<meta name="theme-color" content="#050505">
+<style>
+  /* the page is dark, so the scrollbar and any form controls should be too */
+  html { background: #050505; color-scheme: dark; }
+
+  body {
+    margin: 0;
+    background: #050505;
+    color: #E0E0E0;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  }
+
+  .jhs-bar {
+    width: min(100% - 2rem, 68rem);
+    margin-inline: auto;
+    padding-block: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+  }
+
+  .jhs-brand,
+  .jhs-back,
+  .jhs-foot a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: #E0CB70;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .jhs-brand { color: #FFFFFF; }
+
+  .jhs-brand:focus-visible,
+  .jhs-back:focus-visible,
+  .jhs-foot a:focus-visible {
+    outline: 3px solid #E0CB70;
+    outline-offset: 3px;
+  }
+
+  .jhs-foot {
+    width: min(100% - 2rem, 68rem);
+    margin-inline: auto;
+    padding-block: 1.5rem 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+    border-top: 1px solid #272727;
+    color: #A0A0A0;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+
+<header class="jhs-bar">
+  <a class="jhs-brand" href="https://www.jessiecalm.com/">Jessie Calm</a>
+  <a class="jhs-back" href="https://www.jessiecalm.com/">Back to jessiecalm.com</a>
+</header>
+
+<main>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Fira+Code:wght@400;500&display=swap');
+
+#jhg-root {
+  /* palette: the dark-and-gold house style */
+  --jhg-gold: #D4AF37;
+  --jhg-gold-hi: #E0CB70;
+  --jhg-gold-lo: #967B27;
+  --jhg-bg: #050505;
+  --jhg-surface: #0F0F0F;
+  --jhg-card: #181818;
+  --jhg-border: #272727;
+  --jhg-heading: #FFFFFF;
+  --jhg-text: #E0E0E0;
+  --jhg-muted: #A0A0A0;
+
+  /* fluid scale */
+  --jhg-font-body: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
+  --jhg-font-small: clamp(0.78rem, 0.75rem + 0.15vw, 0.86rem);
+  --jhg-font-h2: clamp(1.9rem, 1.2rem + 3vw, 3.25rem);
+  --jhg-font-h3: clamp(1.15rem, 1.05rem + 0.5vw, 1.4rem);
+  --jhg-font-q: clamp(1.3rem, 1.1rem + 1.1vw, 1.9rem);
+  --jhg-gap: clamp(1rem, 3cqi, 2rem);
+  --jhg-pad: clamp(1.1rem, 4cqi, 2.25rem);
+  --jhg-section: clamp(3rem, 8cqi, 6rem);
+
+  container-type: inline-size;
+  position: relative;
+  overflow-x: clip;
+  padding-block: var(--jhg-section);
+  background:
+    radial-gradient(60rem 28rem at min(12%, calc(50% - 20rem)) -6%, rgba(212, 175, 55, 0.12), transparent 60%),
+    radial-gradient(40rem 24rem at min(104%, calc(50% + 40rem)) 60%, rgba(212, 175, 55, 0.06), transparent 65%),
+    var(--jhg-bg);
+  color: var(--jhg-text);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: var(--jhg-font-body);
+  line-height: 1.6;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+}
+
+#jhg-root,
+#jhg-root *,
+#jhg-root *::before,
+#jhg-root *::after {
+  box-sizing: border-box;
+}
+
+#jhg-root h2,
+#jhg-root h3,
+#jhg-root h4,
+#jhg-root p,
+#jhg-root ul,
+#jhg-root ol,
+#jhg-root li,
+#jhg-root fieldset,
+#jhg-root legend,
+#jhg-root b {
+  margin: 0;
+  padding: 0;
+  overflow-wrap: break-word;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+#jhg-root ul,
+#jhg-root ol {
+  list-style: none;
+}
+
+#jhg-root svg {
+  max-width: 100%;
+  height: auto;
+  flex: none;
+}
+
+#jhg-root .jhg-wrap {
+  width: min(100% - 2rem, 62rem);
+  margin-inline: auto;
+}
+
+#jhg-root .jhg-ico {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* ---------- shared bits ---------- */
+#jhg-root .jhg-eyebrow {
+  font-family: 'Fira Code', ui-monospace, monospace;
+  font-size: var(--jhg-font-small);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--jhg-gold);
+}
+
+#jhg-root .jhg-title {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: var(--jhg-font-h2);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--jhg-heading);
+}
+
+#jhg-root .jhg-title em {
+  font-style: italic;
+  color: var(--jhg-gold);
+}
+
+#jhg-root .jhg-lead {
+  color: var(--jhg-text);
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+  max-width: 40rem;
+}
+
+#jhg-root .jhg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: var(--jhg-font-body);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+#jhg-root .jhg-btn--gold {
+  background: var(--jhg-gold);
+  color: #050505;
+}
+
+#jhg-root .jhg-btn--gold:hover {
+  background: var(--jhg-gold-hi);
+  transform: translateY(-2px);
+}
+
+#jhg-root .jhg-btn--ghost {
+  border-color: var(--jhg-gold-lo);
+  background: transparent;
+  color: var(--jhg-gold-hi);
+}
+
+#jhg-root .jhg-btn--ghost:hover {
+  border-color: var(--jhg-gold);
+  background: rgba(212, 175, 55, 0.08);
+}
+
+#jhg-root .jhg-btn[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#jhg-root .jhg-btn:focus-visible,
+#jhg-root .jhg-focus:focus-visible {
+  outline: 3px solid var(--jhg-gold-hi);
+  outline-offset: 3px;
+}
+
+#jhg-root .jhg-focus:focus {
+  outline: none;
+}
+
+#jhg-root .jhg-screen {
+  animation: jhg-in 0.35s ease both;
+}
+
+@keyframes jhg-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- panel (intro + questions) ---------- */
+#jhg-root .jhg-panel {
+  width: min(100%, 46rem);
+  margin-inline: auto;
+  padding: var(--jhg-pad);
+  border: 1px solid var(--jhg-border);
+  border-radius: 1.4rem;
+  background:
+    radial-gradient(30rem 14rem at 100% 0%, rgba(212, 175, 55, 0.1), transparent 65%),
+    var(--jhg-card);
+}
+
+#jhg-root .jhg-intro {
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
+}
+
+#jhg-root .jhg-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#jhg-root .jhg-meta li,
+#jhg-root .jhg-chips li {
+  padding: 0.3rem 0.85rem;
+  border: 1px solid var(--jhg-border);
+  border-radius: 999px;
+  background: var(--jhg-surface);
+  font-family: 'Fira Code', ui-monospace, monospace;
+  font-size: var(--jhg-font-small);
+  color: var(--jhg-muted);
+}
+
+#jhg-root .jhg-top {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: calc(var(--jhg-gap) * 0.9);
+}
+
+#jhg-root .jhg-segs {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 0.35rem;
+}
+
+#jhg-root .jhg-seg {
+  height: 0.3rem;
+  border-radius: 999px;
+  background: var(--jhg-border);
+}
+
+#jhg-root .jhg-seg.is-done {
+  background: var(--jhg-gold-lo);
+}
+
+#jhg-root .jhg-seg.is-now {
+  background: var(--jhg-gold);
+}
+
+#jhg-root .jhg-count {
+  font-family: 'Fira Code', ui-monospace, monospace;
+  font-size: var(--jhg-font-small);
+  color: var(--jhg-muted);
+}
+
+#jhg-root .jhg-fieldset {
+  min-width: 0;
+  border: 0;
+}
+
+#jhg-root .jhg-q-title {
+  display: block;
+  width: 100%;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: var(--jhg-font-q);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--jhg-heading);
+}
+
+#jhg-root .jhg-q-hint {
+  margin-top: 0.4rem;
+  color: var(--jhg-muted);
+  font-size: calc(var(--jhg-font-body) * 0.96);
+}
+
+#jhg-root .jhg-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 0.75rem;
+  margin-top: var(--jhg-gap);
+}
+
+#jhg-root .jhg-opt {
+  position: relative;
+  display: block;
+}
+
+#jhg-root .jhg-opt input {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#jhg-root .jhg-opt-box {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  height: 100%;
+  min-height: 44px;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--jhg-border);
+  border-radius: 0.9rem;
+  background: var(--jhg-surface);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+#jhg-root .jhg-opt:hover .jhg-opt-box {
+  border-color: var(--jhg-gold-lo);
+}
+
+#jhg-root .jhg-opt input:checked + .jhg-opt-box {
+  border-color: var(--jhg-gold);
+  background: rgba(212, 175, 55, 0.08);
+}
+
+#jhg-root .jhg-opt input:focus-visible + .jhg-opt-box {
+  outline: 3px solid var(--jhg-gold-hi);
+  outline-offset: 2px;
+}
+
+#jhg-root .jhg-mark {
+  position: relative;
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.15rem;
+  border: 2px solid var(--jhg-muted);
+  border-radius: 50%;
+}
+
+#jhg-root .jhg-opt--multi .jhg-mark {
+  border-radius: 0.35rem;
+}
+
+#jhg-root .jhg-opt input:checked + .jhg-opt-box .jhg-mark {
+  border-color: var(--jhg-gold);
+  background: var(--jhg-gold);
+}
+
+#jhg-root .jhg-opt input:checked + .jhg-opt-box .jhg-mark::after {
+  content: '';
+  position: absolute;
+  left: 0.3rem;
+  top: 0.08rem;
+  width: 0.32rem;
+  height: 0.62rem;
+  border: solid #050505;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+#jhg-root .jhg-opt-text b {
+  display: block;
+  font-weight: 600;
+  color: var(--jhg-heading);
+}
+
+#jhg-root .jhg-opt-text small {
+  display: block;
+  margin-top: 0.1rem;
+  color: var(--jhg-muted);
+  font-size: calc(var(--jhg-font-body) * 0.9);
+}
+
+#jhg-root .jhg-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: space-between;
+  margin-top: calc(var(--jhg-gap) * 1.2);
+}
+
+/* ---------- result ---------- */
+#jhg-root .jhg-result {
+  display: grid;
+  gap: var(--jhg-gap);
+}
+
+#jhg-root .jhg-rhead {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 44rem;
+}
+
+#jhg-root .jhg-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: 0.75rem;
+}
+
+#jhg-root .jhg-stat {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--jhg-border);
+  border-radius: 0.9rem;
+  background: var(--jhg-surface);
+}
+
+#jhg-root .jhg-stat dt {
+  font-family: 'Fira Code', ui-monospace, monospace;
+  font-size: var(--jhg-font-small);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--jhg-muted);
+}
+
+#jhg-root .jhg-stat dd {
+  margin: 0.1rem 0 0;
+  font-weight: 600;
+  color: var(--jhg-heading);
+}
+
+#jhg-root .jhg-stat small {
+  display: block;
+  font-weight: 400;
+  color: var(--jhg-muted);
+  font-size: calc(var(--jhg-font-body) * 0.88);
+}
+
+#jhg-root .jhg-card {
+  display: grid;
+  gap: 0.9rem;
+  align-content: start;
+  padding: clamp(1.1rem, 3cqi, 1.75rem);
+  border: 1px solid var(--jhg-border);
+  border-radius: 1.1rem;
+  background: var(--jhg-card);
+}
+
+#jhg-root .jhg-h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: var(--jhg-font-h3);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--jhg-heading);
+}
+
+#jhg-root .jhg-note {
+  color: var(--jhg-muted);
+  font-size: calc(var(--jhg-font-body) * 0.94);
+}
+
+#jhg-root .jhg-list {
+  display: grid;
+  gap: 0.6rem;
+}
+
+#jhg-root .jhg-list li {
+  position: relative;
+  padding-left: 1.7rem;
+}
+
+#jhg-root .jhg-checks li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  width: 1rem;
+  height: 1rem;
+  border: 1.5px solid var(--jhg-gold-lo);
+  border-radius: 0.25rem;
+}
+
+#jhg-root .jhg-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#jhg-root .jhg-chips li {
+  color: var(--jhg-text);
+}
+
+#jhg-root .jhg-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: var(--jhg-gap);
+  align-items: start;
+}
+
+#jhg-root .jhg-watch li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: start;
+  padding-left: 0;
+}
+
+#jhg-root .jhg-stepchip {
+  padding: 0.15rem 0.7rem;
+  border: 1px solid var(--jhg-gold-lo);
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.08);
+  font-family: 'Fira Code', ui-monospace, monospace;
+  font-size: var(--jhg-font-small);
+  white-space: nowrap;
+  color: var(--jhg-gold);
+}
+
+#jhg-root .jhg-cta {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.25rem, 4cqi, 2.25rem);
+  border: 1px solid var(--jhg-gold-lo);
+  border-radius: 1.4rem;
+  background:
+    radial-gradient(34rem 16rem at 100% 0%, rgba(212, 175, 55, 0.16), transparent 65%),
+    var(--jhg-card);
+}
+
+#jhg-root .jhg-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+#jhg-root .jhg-fine {
+  color: var(--jhg-muted);
+  font-size: var(--jhg-font-small);
+}
+
+#jhg-root .jhg-noscript {
+  padding: var(--jhg-pad);
+  border: 1px solid var(--jhg-border);
+  border-radius: 1.1rem;
+  background: var(--jhg-card);
+}
+
+#jhg-root .jhg-noscript a {
+  color: var(--jhg-gold-hi);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #jhg-root .jhg-screen {
+    animation: none;
+  }
+
+  #jhg-root .jhg-btn,
+  #jhg-root .jhg-opt-box {
+    transition: none;
+  }
+
+  #jhg-root .jhg-btn--gold:hover {
+    transform: none;
+  }
+}
+</style>
+
+<section id="jhg-root" aria-labelledby="jhg-title">
+  <div class="jhg-wrap">
+    <div class="jhg-stage" data-jhg-stage>
+      <noscript>
+        <div class="jhg-noscript">
+          <p>The website plan generator needs JavaScript. You can still <a href="https://schedule.fillout.com/t/3Rgh4t69LFus">book a free discovery call</a> and we will build your plan together.</p>
+        </div>
+      </noscript>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  'use strict';
+
+  var root = document.getElementById('jhg-root');
+  if (!root) { return; }
+  var stage = root.querySelector('[data-jhg-stage]');
+  if (!stage) { return; }
+
+  var BOOK_URL = 'https://schedule.fillout.com/t/3Rgh4t69LFus';
+  var LEAD_URL = 'mailto:hellojessiecalm@gmail.com?subject=Please%20send%20me%20the%20Website%20Kickoff%20Checklist';
+  var LEAD_EMAIL = 'hellojessiecalm@gmail.com';
+
+  /* ------------------------------------------------------------------
+     DATA: every question, rule and phrase lives here. Edit copy here only.
+     ------------------------------------------------------------------ */
+  var QUESTIONS = [
+    {
+      id: 'goal', type: 'single',
+      title: 'What is the main job of your website?',
+      hint: 'Pick the one that matters most.',
+      options: [
+        { v: 'leads', short: 'Get enquiries', label: 'Get calls and enquiries', sub: 'Turn visitors into leads' },
+        { v: 'book', short: 'Get bookings', label: 'Get appointments booked', sub: 'Clients book time with me online' },
+        { v: 'sell', short: 'Sell online', label: 'Sell products online', sub: 'A shop with payments' },
+        { v: 'show', short: 'Show my work', label: 'Show my work', sub: 'A portfolio or gallery that impresses' },
+        { v: 'inform', short: 'Build trust', label: 'Build trust and share information', sub: 'A professional home for my business' }
+      ]
+    },
+    {
+      id: 'status', type: 'single',
+      title: 'Where are you starting from?',
+      hint: 'This tells me whether we begin with a blank page or a review.',
+      options: [
+        { v: 'new', short: 'New site', label: 'A brand new website', sub: 'I do not have one yet' },
+        { v: 'redo', short: 'Redesign', label: 'Redesign my current website', sub: 'It exists but looks or works poorly' },
+        { v: 'fix', short: 'Fix or extend', label: 'Fix or add to my current website', sub: 'Mostly fine, needs new features or repairs' }
+      ]
+    },
+    {
+      id: 'features', type: 'multi',
+      title: 'Which features do you need?',
+      hint: 'Choose all that apply.',
+      options: [
+        { v: 'forms', label: 'Contact or enquiry forms' },
+        { v: 'booking', label: 'Online booking calendar' },
+        { v: 'store', label: 'Online store with payments' },
+        { v: 'blog', label: 'Blog or articles' },
+        { v: 'members', label: 'Member login or client portal' },
+        { v: 'crm', label: 'Automatic follow-up emails or texts', sub: 'Plus a CRM to track every lead' },
+        { v: 'lang', label: 'More than one language' },
+        { v: 'none', label: 'None of these, or not sure yet' }
+      ]
+    },
+    {
+      id: 'size', type: 'single',
+      title: 'How many pages do you expect?',
+      hint: 'A rough guess is fine.',
+      options: [
+        { v: 'one', label: 'One page', sub: 'Everything on a single scrolling page' },
+        { v: 'few', label: '2 to 5 pages' },
+        { v: 'many', label: '6 to 10 pages' },
+        { v: 'lots', label: 'More than 10 pages' },
+        { v: 'unsure', label: 'Not sure yet' }
+      ]
+    },
+    {
+      id: 'content', type: 'single',
+      title: 'How ready is your content?',
+      hint: 'Text, photos, logo and brand colors.',
+      options: [
+        { v: 'ready', label: 'Ready', sub: 'Text, photos and logo are done' },
+        { v: 'partly', label: 'Partly ready', sub: 'I have some of it' },
+        { v: 'none', label: 'Not yet', sub: 'I will need help' }
+      ]
+    },
+    {
+      id: 'edit', type: 'single',
+      title: 'Who will update the site after launch?',
+      hint: 'Prices, photos, opening hours, new articles.',
+      options: [
+        { v: 'self', label: 'Me or my team', sub: 'So it must be easy to edit' },
+        { v: 'dev', label: 'My developer', sub: 'I will ask when something changes' },
+        { v: 'unsure', label: 'Not sure yet' }
+      ]
+    },
+    {
+      id: 'when', type: 'single',
+      title: 'When would you like to launch?',
+      hint: 'There is no wrong answer. It only shapes the plan.',
+      options: [
+        { v: 'asap', label: 'As soon as possible' },
+        { v: 'soon', label: 'Within a month or two' },
+        { v: 'later', label: 'In a few months' },
+        { v: 'flex', label: 'No fixed date' }
+      ]
+    }
+  ];
+
+  var BASE_PAGES = ['Home', 'About', 'Contact'];
+  var GOAL_PAGES = {
+    leads: ['Services', 'Testimonials'],
+    book: ['Services', 'Book online'],
+    sell: ['Shop', 'Product page', 'Cart and checkout', 'Shipping and returns'],
+    show: ['Portfolio', 'Case studies'],
+    inform: ['Services', 'FAQ']
+  };
+  var FEATURE_PAGES = {
+    booking: ['Book online'],
+    store: ['Shop', 'Product page', 'Cart and checkout'],
+    blog: ['Blog'],
+    members: ['Member login', 'Member area']
+  };
+  var PAGE_LIMIT = { one: 1, few: 5, many: 10, lots: 99, unsure: 5 };
+  var PAGE_WEIGHT = { one: 0, few: 1, many: 2, lots: 3, unsure: 1 };
+
+  var TIERS = {
+    Compact: 'Focused and quick to plan',
+    Standard: 'A typical business website',
+    Advanced: 'A larger build with extra moving parts'
+  };
+  var READINESS = {
+    ready: { label: 'Ready to start', note: 'Your content is done' },
+    partly: { label: 'Nearly ready', note: 'Some content still to gather' },
+    none: { label: 'Needs preparation', note: 'We will plan your content early' }
+  };
+
+  /* ------------------------------------------------------------------
+     STATE
+     ------------------------------------------------------------------ */
+  var state = { i: -1, answers: {} };
+
+  /* ------------------------------------------------------------------
+     SMALL HELPERS
+     ------------------------------------------------------------------ */
+  function el(tag, cls, kids, attrs) {
+    var n = document.createElement(tag);
+    if (cls) { n.className = cls; }
+    var k;
+    if (attrs) {
+      for (k in attrs) {
+        if (Object.prototype.hasOwnProperty.call(attrs, k)) { n.setAttribute(k, attrs[k]); }
+      }
+    }
+    if (kids) {
+      for (var i = 0; i < kids.length; i++) {
+        var c = kids[i];
+        if (c === null || c === undefined) { continue; }
+        n.appendChild(typeof c === 'string' ? document.createTextNode(c) : c);
+      }
+    }
+    return n;
+  }
+
+  function findOption(qid, v) {
+    for (var i = 0; i < QUESTIONS.length; i++) {
+      if (QUESTIONS[i].id !== qid) { continue; }
+      for (var j = 0; j < QUESTIONS[i].options.length; j++) {
+        if (QUESTIONS[i].options[j].v === v) { return QUESTIONS[i].options[j]; }
+      }
+    }
+    return null;
+  }
+
+  function pushUnique(list, item) {
+    if (list.indexOf(item) === -1) { list.push(item); }
+  }
+
+  function joinWords(list) {
+    if (list.length <= 1) { return list.join(''); }
+    return list.slice(0, -1).join(', ') + ' and ' + list[list.length - 1];
+  }
+
+  function isAnswered(q) {
+    var a = state.answers[q.id];
+    return q.type === 'multi' ? !!(a && a.length) : !!a;
+  }
+
+  /* ------------------------------------------------------------------
+     THE GENERATOR: answers in, plan out
+     ------------------------------------------------------------------ */
+  function compute(a) {
+    var feats = a.features || [];
+    var realFeats = feats.filter(function (f) { return f !== 'none'; });
+    function has(f) { return feats.indexOf(f) !== -1; }
+
+    /* pages */
+    var pages = BASE_PAGES.slice();
+    (GOAL_PAGES[a.goal] || []).forEach(function (p) { pushUnique(pages, p); });
+    realFeats.forEach(function (f) {
+      (FEATURE_PAGES[f] || []).forEach(function (p) { pushUnique(pages, p); });
+    });
+    var pageNote = '';
+    if (a.size === 'one') {
+      pageNote = 'On a single page, these become sections you scroll through.';
+    } else if (pages.length > PAGE_LIMIT[a.size]) {
+      pageNote = 'This is more pages than you planned for. We can trim or combine some in the written scope.';
+    }
+
+    /* size and readiness */
+    var pts = PAGE_WEIGHT[a.size] + realFeats.length * 0.5;
+    if (has('store') || has('members') || a.goal === 'sell') { pts += 1; }
+    var tier = pts <= 2 ? 'Compact' : (pts <= 4 ? 'Standard' : 'Advanced');
+
+    return {
+      answers: a,
+      pages: pages,
+      pageNote: pageNote,
+      tier: tier,
+      readiness: READINESS[a.content],
+      checklist: buildChecklist(a, realFeats, has),
+      watch: buildWatch(a, realFeats, has, tier)
+    };
+  }
+
+  function buildChecklist(a, realFeats, has) {
+    var items = [];
+    if (a.status !== 'new') { pushUnique(items, 'Login access to your current website'); }
+    pushUnique(items, 'Your logo files and brand colors');
+    if (a.content !== 'ready') {
+      pushUnique(items, 'Text for each page, or a note that you want help writing it');
+      pushUnique(items, 'Real photos of you, your team and your work');
+    }
+    if (a.goal === 'leads' || a.goal === 'inform') { pushUnique(items, 'Your services described in plain words, plus any testimonials'); }
+    if (a.goal === 'book' || has('booking')) { pushUnique(items, 'Your services, how long each takes, and your available hours'); }
+    if (a.goal === 'sell' || has('store')) { pushUnique(items, 'Your product list with photos, prices and shipping rules'); }
+    if (a.goal === 'show') { pushUnique(items, 'Your best 6 to 12 projects with photos and a short story for each'); }
+    if (has('blog')) { pushUnique(items, 'Two or three topics for your first articles'); }
+    if (has('crm')) { pushUnique(items, 'Ideas for the follow-up messages you want sent automatically'); }
+    if (has('members')) { pushUnique(items, 'What members get access to, and how they sign up'); }
+    if (has('lang')) { pushUnique(items, 'Which languages you need, and who will translate'); }
+    pushUnique(items, 'Your domain name and where it is registered');
+    return items.slice(0, 8);
+  }
+
+  function buildWatch(a, realFeats, has, tier) {
+    var out = [];
+    function add(step, text) { out.push({ step: step, text: text }); }
+
+    if (a.status !== 'new') {
+      add(1, 'You already have a site, so we start by reviewing it. That way we keep what works and protect your existing pages, links and search visibility.');
+    }
+    if (a.content === 'partly') {
+      add(3, 'Some of your content is ready. The content plan will list exactly what is still missing so nothing stalls the build.');
+    } else if (a.content === 'none') {
+      add(3, 'You will need help with content. We plan the pages together and I can help shape the text, so content does not hold up the project.');
+    }
+    if (has('lang')) {
+      add(3, 'More than one language means more content to prepare and more pages to test, so we plan it early.');
+    }
+    if (a.goal === 'show') {
+      add(4, 'Your work is the star, so the design preview matters most. We settle the direction there before anything is built.');
+    }
+    if (a.when === 'asap') {
+      if (a.content !== 'ready' || tier === 'Advanced') {
+        add(2, 'A fast launch works best with a tight scope. We agree what must be live on day one and what can follow in a second phase.');
+      } else {
+        add(2, 'A quick launch is possible when content is ready and the scope stays focused. We confirm dates in the written scope.');
+      }
+    }
+    var live = [];
+    if (a.goal === 'sell' || has('store')) { live.push('online payments'); }
+    if (has('members')) { live.push('member logins'); }
+    if (a.goal === 'book' || has('booking')) { live.push('bookings and reminders'); }
+    if (has('crm')) { live.push('automatic follow-ups'); }
+    if (has('forms')) { live.push('forms'); }
+    if (live.length) {
+      add(6, 'Your site includes ' + joinWords(live) + '. Each one gets a live test before you see the final version.');
+    }
+    if (a.edit === 'self') {
+      add(7, 'You want to update the site yourself, so I set it up to be easy to edit and hand it over with notes.');
+    } else if (a.edit === 'dev') {
+      add(7, 'Your developer will handle changes, so I hand over clean work with clear notes.');
+    }
+    out.sort(function (x, y) { return x.step - y.step; });
+    if (!out.length) { add(5, 'Nothing unusual in your answers. The standard 7 steps apply.'); }
+    return out;
+  }
+
+  function planText(r) {
+    var a = r.answers;
+    var lines = [
+      'MY WEBSITE PLAN',
+      '',
+      'Main goal: ' + findOption('goal', a.goal).label,
+      'Starting point: ' + findOption('status', a.status).label,
+      'Project size: ' + r.tier,
+      'Content: ' + r.readiness.label,
+      '',
+      'Suggested pages: ' + r.pages.join(', '),
+      '',
+      'Get ready first:'
+    ];
+    r.checklist.forEach(function (c) { lines.push('- ' + c); });
+    lines.push('', 'Created with the website plan generator.');
+    return lines.join('\n');
+  }
+
+  /* ------------------------------------------------------------------
+     SCREENS
+     ------------------------------------------------------------------ */
+  function btn(label, cls, onClick) {
+    var b = el('button', 'jhg-btn ' + cls, [label], { type: 'button' });
+    if (onClick) { b.addEventListener('click', onClick); }
+    return b;
+  }
+
+  function link(label, cls, href, external) {
+    var attrs = { href: href };
+    if (external) { attrs.target = '_blank'; attrs.rel = 'noopener'; }
+    return el('a', 'jhg-btn ' + cls, [label], attrs);
+  }
+
+  function renderIntro() {
+    var title = el('h2', 'jhg-title jhg-focus', ['Build Your ', el('em', null, ['Website Plan'])], { id: 'jhg-title', tabindex: '-1' });
+    return el('div', 'jhg-panel jhg-screen', [
+      el('div', 'jhg-intro', [
+        el('p', 'jhg-eyebrow', ['Free planner']),
+        title,
+        el('p', 'jhg-lead', ['Answer ' + QUESTIONS.length + ' quick questions and get a personal plan: the pages you need, what to get ready first, and what to expect along the way.']),
+        el('ul', 'jhg-meta', [
+          el('li', null, [QUESTIONS.length + ' questions']),
+          el('li', null, ['About 2 minutes']),
+          el('li', null, ['No sign-up'])
+        ], { role: 'list' }),
+        btn('Start my plan', 'jhg-btn--gold', function () { go(0); })
+      ])
+    ]);
+  }
+
+  function renderQuestion() {
+    var q = QUESTIONS[state.i];
+    var multi = q.type === 'multi';
+    var last = state.i === QUESTIONS.length - 1;
+
+    var segs = [];
+    for (var s = 0; s < QUESTIONS.length; s++) {
+      segs.push(el('li', 'jhg-seg' + (s < state.i ? ' is-done' : (s === state.i ? ' is-now' : '')), []));
+    }
+    var top = el('div', 'jhg-top', [
+      el('ol', 'jhg-segs', segs, { role: 'list', 'aria-hidden': 'true' }),
+      el('p', 'jhg-count', ['Question ' + (state.i + 1) + ' of ' + QUESTIONS.length])
+    ]);
+
+    var legend = el('legend', 'jhg-q-title jhg-focus', [q.title], { tabindex: '-1' });
+    var hint = el('p', 'jhg-q-hint', [q.hint], { id: 'jhg-hint' });
+    var saved = state.answers[q.id];
+    var opts = [];
+    q.options.forEach(function (o, idx) {
+      var id = 'jhg-' + q.id + '-' + idx;
+      var checked = multi ? (saved && saved.indexOf(o.v) !== -1) : saved === o.v;
+      var input = el('input', null, [], { type: multi ? 'checkbox' : 'radio', name: q.id, id: id, value: o.v });
+      if (checked) { input.checked = true; }
+      var text = el('span', 'jhg-opt-text', [el('b', null, [o.label]), o.sub ? el('small', null, [o.sub]) : null]);
+      var box = el('span', 'jhg-opt-box', [el('span', 'jhg-mark', []), text]);
+      opts.push(el('label', 'jhg-opt' + (multi ? ' jhg-opt--multi' : ''), [input, box], { 'for': id }));
+    });
+    var fieldset = el('fieldset', 'jhg-fieldset', [legend, hint, el('div', 'jhg-options', opts)], { 'aria-describedby': 'jhg-hint' });
+
+    var next = btn(last ? 'See my plan' : 'Next', 'jhg-btn--gold', function () { go(state.i + 1); });
+    next.disabled = !isAnswered(q);
+    var back = btn('Back', 'jhg-btn--ghost', function () { go(state.i - 1); });
+
+    fieldset.addEventListener('change', function (e) {
+      var t = e.target;
+      if (!t || t.tagName !== 'INPUT') { return; }
+      if (multi) {
+        var boxes = fieldset.querySelectorAll('input');
+        var i2;
+        if (t.checked) {
+          for (i2 = 0; i2 < boxes.length; i2++) {
+            if (t.value === 'none' && boxes[i2] !== t) { boxes[i2].checked = false; }
+            if (t.value !== 'none' && boxes[i2].value === 'none') { boxes[i2].checked = false; }
+          }
+        }
+        var picked = [];
+        for (i2 = 0; i2 < boxes.length; i2++) {
+          if (boxes[i2].checked) { picked.push(boxes[i2].value); }
+        }
+        state.answers[q.id] = picked;
+      } else {
+        state.answers[q.id] = t.value;
+      }
+      next.disabled = !isAnswered(q);
+    });
+
+    return el('div', 'jhg-panel jhg-screen', [
+      top,
+      fieldset,
+      el('div', 'jhg-nav', [back, next])
+    ]);
+  }
+
+  function statItem(label, value, small) {
+    return el('div', 'jhg-stat', [
+      el('dt', null, [label]),
+      el('dd', null, [value, small ? el('small', null, [small]) : null])
+    ]);
+  }
+
+  function renderResult() {
+    var r = compute(state.answers);
+    var a = r.answers;
+
+    var head = el('div', 'jhg-rhead', [
+      el('p', 'jhg-eyebrow', ['Your plan']),
+      el('h2', 'jhg-title jhg-focus', ['Here is your ', el('em', null, ['website plan'])], { id: 'jhg-title', tabindex: '-1' }),
+      el('p', 'jhg-lead', ['Built from your answers. It is a starting point that we confirm together on a discovery call.'])
+    ]);
+
+    var stats = el('dl', 'jhg-stats', [
+      statItem('Main goal', findOption('goal', a.goal).short),
+      statItem('Starting point', findOption('status', a.status).short),
+      statItem('Project size', r.tier, TIERS[r.tier]),
+      statItem('Content', r.readiness.label, r.readiness.note)
+    ]);
+
+    var pageChips = r.pages.map(function (p) { return el('li', null, [p]); });
+    var pagesCard = el('div', 'jhg-card', [
+      el('h3', 'jhg-h3', [a.size === 'one' ? 'Sections for your one-page site' : 'Suggested pages']),
+      el('ul', 'jhg-chips', pageChips, { role: 'list' }),
+      r.pageNote ? el('p', 'jhg-note', [r.pageNote]) : null
+    ]);
+
+    var checkItems = r.checklist.map(function (c) { return el('li', null, [c]); });
+    var checkCard = el('div', 'jhg-card', [
+      el('h3', 'jhg-h3', ['Get these ready first']),
+      el('ul', 'jhg-list jhg-checks', checkItems, { role: 'list' }),
+      el('p', 'jhg-note', ['The full checklist is in the free Website Kickoff Checklist PDF.'])
+    ]);
+
+    var watchItems = r.watch.map(function (w) {
+      return el('li', null, [el('span', 'jhg-stepchip', ['Step ' + w.step]), el('span', null, [w.text])]);
+    });
+    var watchCard = el('div', 'jhg-card', [
+      el('h3', 'jhg-h3', ['What to expect in your process']),
+      el('ul', 'jhg-list jhg-watch', watchItems, { role: 'list' })
+    ]);
+
+    var mail = 'mailto:' + LEAD_EMAIL + '?subject=' + encodeURIComponent('My website plan') + '&body=' + encodeURIComponent(planText(r));
+    var cta = el('div', 'jhg-cta', [
+      el('h3', 'jhg-h3', ['Want to talk it through?']),
+      el('p', null, ['This plan is a starting point. A free discovery call turns it into a written scope with clear deliverables.']),
+      el('div', 'jhg-cta-row', [
+        link('Book a free discovery call', 'jhg-btn--gold', BOOK_URL, true),
+        link('Email me this plan', 'jhg-btn--ghost', mail, false),
+        link('Get the free checklist', 'jhg-btn--ghost', LEAD_URL, false)
+      ]),
+      el('p', 'jhg-fine', ['Nothing is sent unless you choose to. Your answers stay on this page.'])
+    ]);
+    var again = btn('Start over', 'jhg-btn--ghost', function () { state.answers = {}; go(0); });
+
+    return el('div', 'jhg-result jhg-screen', [
+      head, stats,
+      el('div', 'jhg-cards', [pagesCard, checkCard]),
+      watchCard, cta,
+      el('div', 'jhg-cta-row', [again])
+    ]);
+  }
+
+  /* ------------------------------------------------------------------
+     ROUTER
+     ------------------------------------------------------------------ */
+  function go(i) {
+    state.i = i;
+    render(true);
+  }
+
+  function render(moveFocus) {
+    var node;
+    if (state.i < 0) { node = renderIntro(); }
+    else if (state.i >= QUESTIONS.length) { node = renderResult(); }
+    else { node = renderQuestion(); }
+
+    while (stage.firstChild) { stage.removeChild(stage.firstChild); }
+    stage.appendChild(node);
+
+    if (moveFocus) {
+      var f = node.querySelector('.jhg-focus');
+      if (f && f.focus) { f.focus(); }
+    }
+  }
+
+  function boot() { render(false); }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
+</script>
+
+</main>
+
+<footer class="jhs-foot">
+  <span>&copy; Jessie Calm</span>
+  <span>This page was vibe coded with AI and verified by hand.</span>
+  <a href="mailto:hellojessiecalm@gmail.com">hellojessiecalm@gmail.com</a>
+  <a href="https://www.jessiecalm.com/">jessiecalm.com</a>
+</footer>
+
+</body>
+</html>
