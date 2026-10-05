@@ -13,10 +13,14 @@ import { scrollToSection } from '../lib/smoothScroll';
 const HEX_CLIP =
   '[clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%)]';
 
-const FOOTER_LINKS = [
+/** A link either scrolls to a section on this page or leaves for another page. */
+type FooterLink = { name: string } & ({ target: string } | { href: string });
+
+const FOOTER_LINKS: FooterLink[] = [
   { name: 'Home', target: 'home' },
   { name: 'Services', target: 'services' },
   { name: 'Portfolio', target: 'work' },
+  { name: 'Rates', href: '/rates' },
   { name: 'Contact', target: 'contact' },
 ];
 
@@ -64,9 +68,11 @@ const Footer = () => (
         <nav className="flex flex-wrap justify-center gap-x-5 gap-y-3 md:gap-8">
           {FOOTER_LINKS.map((link) => (
             <a
-              key={link.target}
-              href={`#${link.target}`}
-              onClick={(event) => scrollToSection(event, link.target)}
+              key={link.name}
+              href={'target' in link ? `#${link.target}` : link.href}
+              onClick={
+                'target' in link ? (event) => scrollToSection(event, link.target) : undefined
+              }
               className="group relative pb-1 text-sm uppercase tracking-wider text-gray-500 transition-colors hover:text-brand-600 dark:hover:text-brand-400"
             >
               {link.name}
