@@ -17,6 +17,20 @@
       "permanent": true
     }
   ],
+  "rewrites": [
+    {
+      "source": "/rates",
+      "destination": "https://jessie-rates.vercel.app/rates"
+    },
+    {
+      "source": "/rates/",
+      "destination": "https://jessie-rates.vercel.app/rates/"
+    },
+    {
+      "source": "/rates/:path+",
+      "destination": "https://jessie-rates.vercel.app/rates/:path+"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
