@@ -29,6 +29,18 @@
     {
       "source": "/rates/:path+",
       "destination": "https://jessie-rates.vercel.app/rates/:path+"
+    },
+    {
+      "source": "/reviews",
+      "destination": "https://jessie-reviews.vercel.app/reviews"
+    },
+    {
+      "source": "/reviews/",
+      "destination": "https://jessie-reviews.vercel.app/reviews/"
+    },
+    {
+      "source": "/reviews/:path+",
+      "destination": "https://jessie-reviews.vercel.app/reviews/:path+"
     }
   ],
   "headers": [
